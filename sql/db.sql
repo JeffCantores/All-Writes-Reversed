@@ -1,0 +1,129 @@
+CREATE DATABASE awr_database;
+
+USE awr_database;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(225),
+  passord VARCHAR(225),
+  username VARCHAR(225)
+);
+
+CREATE TABLE IF NOT EXISTS cc_details (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  cc_number INT(10),
+  cc_exp VARCHAR(225),
+  cc_ccv VARCHAR(10),
+  user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS address (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  house_number VARCHAR(225),
+  street VARCHAR(225),
+  brgy VARCHAR(225),
+  city VARCHAR(225),
+  user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS currentuser (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS categories (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  category VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS prices (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  price INT(10)
+);
+
+CREATE TABLE IF NOT EXISTS colors (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  color VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS products (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  img_dir VARCHAR(225),
+  name VARCHAR(255),
+  color_id INT(6) UNSIGNED, FOREIGN KEY (color_id) REFERENCES colors(id),
+  price_id INT(6) UNSIGNED, FOREIGN KEY (price_id) REFERENCES prices(id),
+  category_id INT(6) UNSIGNED, FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+CREATE TABLE IF NOT EXISTS payment_method (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  method VARCHAR(225)
+);
+
+
+CREATE TABLE IF NOT EXISTS cart (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  qty INT(6),
+  price INT(6),
+  product_id INT(6) UNSIGNED, FOREIGN KEY (product_id) REFERENCES products(id),
+  cuser_id INT(6) UNSIGNED, FOREIGN KEY (cuser_id) REFERENCES currentuser(id)
+);
+
+CREATE TABLE IF NOT EXISTS orders (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  item_id INT(6) UNSIGNED, FOREIGN KEY (item_id) REFERENCES cart(id),
+  address_id INT(6) UNSIGNED, FOREIGN KEY (address_id) REFERENCES address(id),
+  method_id INT(6) UNSIGNED, FOREIGN KEY (method_id) REFERENCES payment_method(id),
+  cc_id INT(6) UNSIGNED, FOREIGN KEY (cc_id) REFERENCES cc_details(id)
+);
+
+CREATE TABLE IF NOT EXISTS logo (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  logo_dir VARCHAR(255)
+);
+
+INSERT INTO logo (logo_dir)
+VALUES
+  ('https://i.imgur.com/gRkhOwT.png'),
+  ('https://i.imgur.com/8VHbopk.png');
+
+INSERT INTO categories (category)
+VALUES
+  ('Logo Tees'),
+  ('Script Tees'),
+  ('Graphic Tees');
+
+ INSERT INTO prices (price)
+ VALUES
+  (350),
+  (450),
+  (550);
+
+INSERT INTO colors (color)
+VALUES
+  ('Black'),
+  ('Navy Blue'),
+  ('White'),
+  ('Maroon');
+
+INSERT INTO payment_method (method)
+VALUES
+  ('COD'),
+  ('CC');
+
+INSERT INTO products (img_dir, name, color_id, price_id, category_id)
+VALUES
+	('https://i.imgur.com/BU70Crq.jpg', 'AWR Logo Tee V1', 1, 1, 1),
+	('https://i.imgur.com/vVC1O9P.jpg', 'AWR Logo Tee V2', 2, 1, 1),
+	('https://i.imgur.com/F8VuXyF.jpg', 'AWR Logo Tee V3', 3, 1, 1),
+	('https://i.imgur.com/zOWRgYW.jpg', 'AWR Script Tee V1', 1, 2, 2),
+	('https://i.imgur.com/8gpI2DX.jpg', 'AWR Script Tee V2', 2, 2, 2),
+	('https://i.imgur.com/6wvoKFK.jpg', 'AWR Script Tee V3', 3, 2, 2),
+	('https://i.imgur.com/2LT7Wcp.jpg', 'AWR In Memory of I Dont Remember V1', 1, 3, 3),
+	('https://i.imgur.com/Sjid8ws.jpg', 'AWR In Memory of I Dont Remember V2', 1, 3, 3),
+	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3),
+	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3),
+	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3);
+
+
+

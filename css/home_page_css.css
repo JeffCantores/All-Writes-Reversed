@@ -1,0 +1,73 @@
+body{
+	background-color: #171616;
+}
+
+
+.footer{
+	height : 100px; 
+	width : 100%; 
+	position : sticky; 
+	bottom : 0px; 
+	background-color : white; 
+}
+.socmed{
+	float : left; 
+	margin-right : 5px; 
+	position : fixed; 
+	bottom : 10px; 
+	left : 10px; 
+	color : orange; 
+	font-style : italic;
+}
+.copyright{
+	float : right; 
+	position : fixed; 
+	bottom : 10px; 
+	right : 10px;
+}
+
+
+.header{
+	position : sticky; 
+	top : 0px; 
+}
+.navbar-brand{
+	margin-left : 4px;
+}
+.navbar{
+	padding : 0px;
+}
+.logo{
+	height: 50px;
+}
+.buttonCont{
+	margin : 13px;
+}
+.login{
+	float : right;
+}
+.orange-break{
+	height : 3px; 
+	width : 100%; 
+	background-color : orange;
+	position: sticky;
+	top: 60px;
+}
+
+.item{
+	height: 200px;
+	border-radius: 10px;
+}
+.display-item{
+	display: inline-block;
+	margin-left:40px;
+	margin-bottom: 20px;
+	padding: 15px;
+	background-color: black;
+	border-radius: 20px;
+}
+
+.category{
+	margin-left:20px;
+	color: white;	
+}

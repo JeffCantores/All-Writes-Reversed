@@ -1,7 +1,7 @@
-<?php 
+<?php
 	function getLogo(){
 		try{
-			@ $db = new mysqli('127.0.0.1:3306','IamJaycee18', '1234567890', 'awr_database');
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
 	   		$dbError = mysqli_connect_errno();
 		    if($dbError){
 		      	throw new Exception("DB CONNECTION ERROR");
@@ -19,7 +19,7 @@
 
 	function getProductImages(){
 		try{
-			@ $db = new mysqli('127.0.0.1:3306','IamJaycee18', '1234567890', 'awr_database');
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
 	   		$dbError = mysqli_connect_errno();
 	   		if($dbError){
 	   			throw new Exception("DB CONNECTION ERROR");
@@ -33,7 +33,7 @@
 	   				$category = $resultCategories->fetch_assoc();
 	   				echo '<br>';
 	   				echo '<h3 class="category">'.$category['category'].'</h3>';
-	   				
+
 
 	   				$selectProducts = 'SELECT img_dir from products WHERE category_id ='.$category['id'].';';
 	   				$resultProducts = $db->query($selectProducts);
@@ -54,5 +54,5 @@
 			echo $e->getMessage();
 		}
 	}
-    
+
 ?>

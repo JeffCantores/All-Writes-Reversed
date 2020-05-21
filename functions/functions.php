@@ -35,14 +35,17 @@
 	   				echo '<h3 class="category">'.$category['category'].'</h3>';
 
 
-	   				$selectProducts = 'SELECT img_dir from products WHERE category_id ='.$category['id'].';';
+	   				$selectProducts = 'SELECT img_dir, name from products WHERE category_id ='.$category['id'].';';
 	   				$resultProducts = $db->query($selectProducts);
 	   				$resultProductsCount = $resultProducts->num_rows;
 
+
 					for($ctr2 = 0; $ctr2 < $resultProductsCount; $ctr2++){
 						$product  =$resultProducts->fetch_assoc();
+						$productName = strtolower(str_replace(' ', '-', $product['name']));
+
 						echo '<div class="row display-item">';
-						echo '<a href="item.php"> ';
+						echo '<a href="/view-comp/pages/'.$productName.'.php"> ';
 						echo '<img class="item" src = "'.$product['img_dir'].'">';
 						echo '</a> ';
 						echo '</div>';

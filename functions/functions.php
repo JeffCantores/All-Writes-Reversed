@@ -44,8 +44,9 @@
 						$product  =$resultProducts->fetch_assoc();
 						$productName = strtolower(str_replace(' ', '-', $product['name']));
 
+						//echo $productName.'.php';
 						echo '<div class="row display-item">';
-						echo '<a href="/view-comp/pages/'.$productName.'.php"> ';
+						echo '<a href="'.$productName.'.php"> ';
 						echo '<img class="item" src = "'.$product['img_dir'].'">';
 						echo '</a> ';
 						echo '</div>';

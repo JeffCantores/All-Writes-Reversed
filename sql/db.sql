@@ -87,6 +87,11 @@
     ('https://i.imgur.com/gRkhOwT.png'),
     ('https://i.imgur.com/8VHbopk.png');
 
+  INSERT INTO logo (logo_dir)
+  VALUES
+      ('https://i.imgur.com/uz4CfMp.png'),
+      ('https://i.imgur.com/1tNJ5aW.png');
+
   INSERT INTO categories (category)
   VALUES
     ('Logo Tees'),
@@ -124,6 +129,3 @@
   	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3),
   	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3),
   	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3);
-
-
-

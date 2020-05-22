@@ -2,34 +2,56 @@ body{
 	background-color: #171616;
 }
 
+.content{
+	width: 100%;
+	height: 458px;
+	overflow: auto;
+	position:sticky;
+	top: 63px;
+}
 
 .footer{
-	height : 100px; 
-	width : 100%; 
-	position : sticky; 
-	bottom : 0px; 
-	background-color : white; 
+	height : 100px;
+	width : 100%;
+	position : sticky;
+	bottom : 0px;
+	background-color : white;
+	z-index:20;
 }
 .socmed{
-	float : left; 
-	margin-right : 5px; 
-	position : fixed; 
-	bottom : 10px; 
-	left : 10px; 
-	color : orange; 
+	float : left;
+	margin-right : 5px;
+	position : fixed;
+	bottom : 10px;
+	left : 10px;
+	color : orange;
 	font-style : italic;
 }
 .copyright{
-	float : right; 
-	position : fixed; 
-	bottom : 10px; 
+	float : right;
+	position : fixed;
+	bottom : 10px;
 	right : 10px;
+}
+.socmedcontainer{
+	display: inline-block;
+}
+.fblogo{
+	height: 40px;
+	border-radius: 10px;
+	margin-right: 5px;
+}
+.iglogo{
+	height: 44px;
+	border-radius: 10px;
+	margin-right: 5px;
 }
 
 
 .header{
-	position : sticky; 
-	top : 0px; 
+	position : sticky;
+	top : 0px;
+	z-index:20;
 }
 .navbar-brand{
 	margin-left : 4px;
@@ -40,19 +62,22 @@ body{
 .logo{
 	height: 50px;
 }
-.buttonCont{
-	margin : 13px;
-}
-.login{
-	float : right;
+.btn{
+	margin-right: 10px;
 }
 .orange-break{
-	height : 3px; 
-	width : 100%; 
+	height : 3px;
+	width : 100%;
 	background-color : orange;
 	position: sticky;
 	top: 60px;
 }
+.username{
+	margin: auto;
+	margin-right: 10px;
+	color: white;
+}
+
 
 .item{
 	height: 200px;
@@ -69,5 +94,5 @@ body{
 
 .category{
 	margin-left:20px;
-	color: white;	
+	color: white;
 }

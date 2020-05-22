@@ -17,6 +17,68 @@
 		echo $dir['logo_dir'];
 	}
 
+	function getSocMedLogo(){
+		try{
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
+	   		$dbError = mysqli_connect_errno();
+		    if($dbError){
+		      	throw new Exception("DB CONNECTION ERROR");
+		    }else{
+					echo '<div class=socmedcontainer">';
+					for($ite = 3; $ite<=4;$ite++){
+						$selectLogo = 'SELECT logo_dir FROM logo WHERE id = '.$ite;
+		        $resultLogo = $db->query($selectLogo);
+		        $dir = $resultLogo->fetch_assoc();
+
+						if($ite ==3) {
+							echo '<a href="https://www.facebook.com/AllWritesReversed?_rdc=1&_rdr">';
+								echo'<img class="fblogo" src="'.$dir['logo_dir'].'">';
+							echo '</a>';
+						} else {
+							echo '<a href="https://www.instagram.com/allwritesreversed_clothing/">';
+								echo'<img class="iglogo" src="'.$dir['logo_dir'].'">';
+							echo '</a>';
+						}
+
+					}
+					echo '</div>';
+			}
+		}catch(Exception $e){
+			echo $e->getMessage();
+		}
+	}
+	function getUsernameAndButton(){
+		try{
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
+				$dbError = mysqli_connect_errno();
+				if($dbError){
+						throw new Exception("DB CONNECTION ERROR");
+				}else{
+
+						$selectQuery = 'SELECT user_id FROM currentuser';
+						$result = $db->query($selectQuery);
+						$cnt = $result->num_rows;
+						$dir = $result->fetch_assoc();
+
+						if($cnt == 0){
+							echo '<h6 class="username">Please Log In!</h6>';
+					    echo '<button class="btn btn-light"><strong>LOG IN</strong></button>';
+						} else {
+							$selectUser = 'SELECT username FROM users
+								WHERE id = $dir["user_id"]';
+
+							$user = $db->query($selectUser);
+						 	$dir = $user->fetch_assoc();
+
+							echo '<h6 class="username">@'.$dir["username"].'</h6>';
+							echo '<button class="btn btn-light"><strong>LOG OUT</strong></button>';
+						}
+				}
+			}catch (Exception $e){
+				echo $e->getMessage();
+			}
+	}
+
 	function getProductImages(){
 		try{
 			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
@@ -40,26 +102,23 @@
 	   				$resultProductsCount = $resultProducts->num_rows;
 
 
-					for($ctr2 = 0; $ctr2 < $resultProductsCount; $ctr2++){
-						$product  =$resultProducts->fetch_assoc();
-						$productName = strtolower(str_replace(' ', '-', $product['name']));
+						for($ctr2 = 0; $ctr2 < $resultProductsCount; $ctr2++){
+							$product  =$resultProducts->fetch_assoc();
+							$productName = strtolower(str_replace(' ', '-', $product['name']));
 
-						//echo $productName.'.php';
-						echo '<div class="row display-item">';
-						echo '<a href="'.$productName.'.php"> ';
-						echo '<img class="item" src = "'.$product['img_dir'].'">';
-						echo '</a> ';
-						echo '</div>';
-					}
+							//echo $productName.'.php';
+							echo '<div class="row display-item">';
+							echo '<a href="'.$productName.'.php"> ';
+							echo '<img class="item" src = "'.$product['img_dir'].'">';
+							echo '</a> ';
+							echo '</div>';
+						}
 	   			}
-
 	   		}
 		} catch (Exception $e){
 			echo $e->getMessage();
 		}
 	}
 
-
-	
 
 ?>

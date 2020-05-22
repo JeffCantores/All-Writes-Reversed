@@ -1,6 +1,6 @@
 <?php require_once('view-comp/header.php'); require_once('functions/functions.php')?>
 
-    <div >
+    <div class="content">
     	<?php  getProductImages(); ?>
     </div>
 

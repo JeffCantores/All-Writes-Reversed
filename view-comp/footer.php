@@ -1,7 +1,8 @@
 
-    <div class="footer fixed-bottom">
-    <div class="orange-break"></div>  
+    <div class="footer">
+      <div class="orange-break"></div>
         <div class="socmed">
+          <?php getSocMedLogo(); ?>
             Follow us on our Social Media Accounts
         </div>
         <div class="copyright">
@@ -18,5 +19,6 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/home_page_css.css">
+    <link rel="stylesheet" type="text/css" href="css/view_item_css.css">
   </body>
 </html>

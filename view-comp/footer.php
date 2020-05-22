@@ -1,4 +1,6 @@
-    <div class="footer">
+
+    <div class="footer fixed-bottom">
+    <div class="orange-break"></div>  
         <div class="socmed">
             Follow us on our Social Media Accounts
         </div>

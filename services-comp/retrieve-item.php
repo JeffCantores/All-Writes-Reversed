@@ -16,6 +16,14 @@
 		        $resultLogo = $db->query($selectQuery);
 		        $dir = $resultLogo->fetch_assoc();
 
+						$itemPrice = $dir['price'];
+
+						?>
+							<script>
+								sessionStorage.setItem("price", <?php echo $itemPrice; ?>);
+							</script>
+						<?php
+
 		        echo '<div class="products">';
  							echo '<div class="row">';
 								echo '<div class="item-img col-6">';
@@ -23,15 +31,25 @@
 								echo '</div>';
 
 								echo '<div class="col-5">';
-									echo '<input class="uneditable" name="name" size="20" type="text" value="'.$dir['name'].'" readonly><br>';
-									echo '<input class="uneditable" name="color" size="20" type="text" value="'.$dir['color'].'" readonly><br>';
-									echo '<input class="uneditable" name="qty" size="29" min=1 type="number" value="1"><br>';
+								 	echo '<form action="view-cart.php" method="POST">';
+										echo '<input class="uneditable" name="name" size="20" type="text" value="'.$dir['name'].'" readonly><br>';
+										echo '<input class="uneditable" name="color" size="20" type="text" value="'.$dir['color'].'" readonly><br>';
+										echo '<input onchange="computePrice()" id="qty" class="uneditable" name="qty" size="29" type="number" value="1" min=1 ><br>';
 
-									$itemPrice = $dir['price'];
+										echo '<input id="price" class="uneditable" name="color" size="20" type="text" value="'.$itemPrice.'" readonly><br>';
+										echo '<br>';
 
-									echo '<input class="uneditable" name="color" size="20" type="text" value="PhP '.$itemPrice.'" readonly><br>';
-									echo '<br>';
-									echo '<button class="add-to-cart">ADD TO CART</button>';
+										$selectCurrent = 'SELECT user_id FROM currentuser';
+										$resultCurrent = $db->query($selectCurrent);
+										$cnt = $resultCurrent->num_rows;
+
+										if($cnt == 0){
+											echo '<input type="submit" class="add-to-cart" value="ADD TO CART" disabled>';
+										} else {
+
+											echo '<input type="submit" class="add-to-cart" value="ADD TO CART">';
+										}
+									echo '</form >';
 								echo '</div>';
 							echo '</div>';
 						echo '</div>';

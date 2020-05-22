@@ -71,6 +71,7 @@ body{
 	background-color : orange;
 	position: sticky;
 	top: 60px;
+	z-index:20;
 }
 .username{
 	margin: auto;

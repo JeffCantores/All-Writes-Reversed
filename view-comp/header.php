@@ -19,7 +19,9 @@
     <!-- hello-world.php or hello_world.php -->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div class="navbar-brand">
-        <img class="logo" href="index.php" src="<?php getLogo() ?>">
+        <a href="index.php">
+          <img class="logo" src="<?php getLogo() ?>">
+        </a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">

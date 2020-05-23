@@ -1,25 +1,28 @@
-<?php require_once('view-comp/header.php'); require_once('functions/functions.php') ?>
+<?php
+      require_once('view-comp/header.php');
+?>
 
 
-<div class="container" style="height: 555px;">
-  <div class="card" style="height: 100%;">
+
+<div class="container">
+  <div class="card">
     <div class="card-header">
-      <div class="card-title" style="text-align: center; font-size: 40px;">
+      <div class="card-title">
         <strong><i>YOUR CART</i></strong>
       </div>
     </div>
-    <div class="card-body" style="background-color: black; color: white;">
+    <div class="card-body" style="">
       sdasdasd
     </div>
     <div class="card-footer">
-      <div style="float: right;">
-        <span style="background-color: gray; font-size: 24px;"><b> Total:</b> >9999999< </span>
+      <div class="total-element">
+        <span class="total-price"><b> Total:</b> >9999999< </span>
       </div>
       <br><br>
       <div class="buttons">
         <div class="select-all"><input type="checkbox" name="" class="select-all-items" id="select-all">
 					<strong>SELECT ALL</strong>
-          <button class="btn btn-dark btn-sm" style="float: right; width: 200px;"><strong>CHECKOUT</strong></button>
+          <button class="btn btn-dark btn-sm"><strong>CHECKOUT</strong></button>
         </div>
       </div>
     </div>

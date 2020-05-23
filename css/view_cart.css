@@ -1,0 +1,31 @@
+div.container{
+  height: 555px;
+}
+
+.card{
+  height: 100%;
+}
+
+.card-title{
+  text-align: center;
+  font-size: 40px;
+}
+
+.card-body{
+  background-color: black;
+  color: white;
+}
+
+.total-element{
+  float: right;
+}
+
+.total-price{
+  background-color: gray;
+  font-size: 24px;
+}
+
+.btn-dark{
+  float: right;
+  width: 200px;
+}

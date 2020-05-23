@@ -14,6 +14,8 @@
       crossorigin="anonymous">
       <script src="https://kit.fontawesome.com/e4cf9541ab.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="css/view_cart.css">
+
   </head>
   <body>
     <!-- hello-world.php or hello_world.php -->
@@ -34,7 +36,7 @@
           <input class="searchbar" type="text" name="" value="">
         </ul>
       </div>
-      
+
       <?php getUsernameAndButton();?>
 
     </div>

@@ -11,8 +11,12 @@
         <strong><i>YOUR CART</i></strong>
       </div>
     </div>
-    <div class="card-body" style="">
-      sdasdasd
+    <div class="card-body">
+
+      <div class="cart-items">
+
+      </div>
+
     </div>
     <div class="card-footer">
       <div class="total-element">
@@ -20,9 +24,9 @@
       </div>
       <br><br>
       <div class="buttons">
-        <div class="select-all"><input type="checkbox" name="" class="select-all-items" id="select-all">
+        <div class="select-all"><input type="checkbox" class="select-all-items" id="select-all" onclick="checkboxFunction()">
 					<strong>SELECT ALL</strong>
-          <button class="btn btn-dark btn-sm"><strong>CHECKOUT</strong></button>
+          <button class="btn btn-dark btn-sm" id="check-out-button" onclick="purchaseFunction()"><strong>CHECKOUT</strong></button>
         </div>
       </div>
     </div>

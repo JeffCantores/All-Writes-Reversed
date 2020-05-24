@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/view_cart.css">
 
   </head>
-  <body>
+  <body onload="ready()">
     <!-- hello-world.php or hello_world.php -->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div class="navbar-brand">

@@ -3,25 +3,22 @@
 ?>
 
 
-
+<br>
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title">
+  <div class="view-cart-items">
+    <div class="title">
         <strong><i>YOUR CART</i></strong>
-      </div>
     </div>
-    <div class="card-body">
 
+    <div class="body">
       <div class="cart-items">
-
+            (ITEMS FOR CHECKOUT GOES HERE)
       </div>
-
     </div>
-    <div class="card-footer">
-      <div class="total-element">
+
+    <br>
+    <div class="fixed-bottom footer">
         <span class="total-price"><b> Total:</b> >9999999< </span>
-      </div>
       <br><br>
       <div class="buttons">
         <div class="select-all"><input type="checkbox" class="select-all-items" id="select-all" onclick="checkboxFunction()">
@@ -32,6 +29,7 @@
     </div>
   </div>
 </div>
+<br>
 
 
 <?php require_once('view-comp/footer.php') ?>

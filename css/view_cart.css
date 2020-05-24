@@ -1,26 +1,36 @@
-div.container{
-  height: 555px;
+.container{
+  height: 510px;
+  background-color: white;
+  border-radius: 10px;
 }
 
-.card{
-  height: 100%;
+
+
+.view-cart-items{
+  border-top: white;
+  border-radius: 10px;
 }
 
-.card-title{
+.title{
   text-align: center;
   font-size: 40px;
+  color: black;
 }
 
-.card-body{
+.body{
+  height: 320px;
+  border-radius: 10px;
   background-color: black;
-  color: white;
+  color: White;
 }
 
-.total-element{
-  float: right;
+.footer{
+  position: fixed;
 }
 
 .total-price{
+  margin-right: 10px;
+  float: right;
   background-color: gray;
   font-size: 24px;
 }

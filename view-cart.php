@@ -4,7 +4,7 @@
 
 
 <br>
-<div class="container">
+<div class="container jeff">
   <div class="view-cart-items">
     <div class="title">
         <strong><i>YOUR CART</i></strong>

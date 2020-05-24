@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item <?php if(isActive('view-cart.php')) echo 'active'; ?>" >
             <a class="nav-link" href="view-cart.php"><i class="fas fa-shopping-cart"></i><strong> CART</strong></a>
-          </li>
+          </li>&emsp;
           <input class="searchbar" type="text" name="" value="">
         </ul>
       </div>

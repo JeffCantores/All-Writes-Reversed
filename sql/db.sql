@@ -6,7 +6,11 @@
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(225),
     password VARCHAR(225),
-    username VARCHAR(225)
+    username VARCHAR(225),
+    firstname VARCHAR(225),
+    middlename VARCHAR(225),
+    lastname VARCHAR(225),
+    suffix VARCHAR(225)
   );
 
   CREATE TABLE IF NOT EXISTS cc_details (
@@ -52,7 +56,8 @@
     name VARCHAR(255),
     color_id INT(6) UNSIGNED, FOREIGN KEY (color_id) REFERENCES colors(id),
     price_id INT(6) UNSIGNED, FOREIGN KEY (price_id) REFERENCES prices(id),
-    category_id INT(6) UNSIGNED, FOREIGN KEY (category_id) REFERENCES categories(id)
+    category_id INT(6) UNSIGNED, FOREIGN KEY (category_id) REFERENCES categories(id),
+    stock INT(6),
   );
 
   CREATE TABLE IF NOT EXISTS payment_method (
@@ -60,13 +65,12 @@
     method VARCHAR(225)
   );
 
-
   CREATE TABLE IF NOT EXISTS cart (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     qty INT(6),
     price INT(6),
     product_id INT(6) UNSIGNED, FOREIGN KEY (product_id) REFERENCES products(id),
-    cuser_id INT(6) UNSIGNED, FOREIGN KEY (cuser_id) REFERENCES currentuser(id)
+    user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES currentuser(id)
   );
 
   CREATE TABLE IF NOT EXISTS orders (
@@ -85,12 +89,9 @@
   INSERT INTO logo (logo_dir)
   VALUES
     ('https://i.imgur.com/gRkhOwT.png'),
-    ('https://i.imgur.com/8VHbopk.png');
-
-  INSERT INTO logo (logo_dir)
-  VALUES
-      ('https://i.imgur.com/uz4CfMp.png'),
-      ('https://i.imgur.com/1tNJ5aW.png');
+    ('https://i.imgur.com/8VHbopk.png'),
+    ('https://i.imgur.com/uz4CfMp.png'),
+    ('https://i.imgur.com/1tNJ5aW.png');
 
   INSERT INTO categories (category)
   VALUES
@@ -118,14 +119,19 @@
 
   INSERT INTO products (img_dir, name, color_id, price_id, category_id)
   VALUES
-  	('https://i.imgur.com/BU70Crq.jpg', 'AWR Logo Tee V1', 1, 1, 1),
-  	('https://i.imgur.com/vVC1O9P.jpg', 'AWR Logo Tee V2', 2, 1, 1),
-  	('https://i.imgur.com/F8VuXyF.jpg', 'AWR Logo Tee V3', 3, 1, 1),
-  	('https://i.imgur.com/zOWRgYW.jpg', 'AWR Script Tee V1', 1, 2, 2),
-  	('https://i.imgur.com/8gpI2DX.jpg', 'AWR Script Tee V2', 2, 2, 2),
-  	('https://i.imgur.com/6wvoKFK.jpg', 'AWR Script Tee V3', 3, 2, 2),
-  	('https://i.imgur.com/2LT7Wcp.jpg', 'AWR In Memory of I Dont Remember V1', 1, 3, 3),
-  	('https://i.imgur.com/Sjid8ws.jpg', 'AWR In Memory of I Dont Remember V2', 1, 3, 3),
-  	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3),
-  	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3),
-  	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3);
+  	('https://i.imgur.com/BU70Crq.jpg', 'AWR Logo Tee V1', 1, 1, 1, 6),
+  	('https://i.imgur.com/vVC1O9P.jpg', 'AWR Logo Tee V2', 2, 1, 1, 8),
+  	('https://i.imgur.com/F8VuXyF.jpg', 'AWR Logo Tee V3', 3, 1, 1, 5),
+  	('https://i.imgur.com/zOWRgYW.jpg', 'AWR Script Tee V1', 1, 2, 2, 9),
+  	('https://i.imgur.com/8gpI2DX.jpg', 'AWR Script Tee V2', 2, 2, 2, 4),
+  	('https://i.imgur.com/6wvoKFK.jpg', 'AWR Script Tee V3', 3, 2, 2, 6),
+  	('https://i.imgur.com/2LT7Wcp.jpg', 'AWR In Memory of I Dont Remember V1', 1, 3, 3, 5),
+  	('https://i.imgur.com/Sjid8ws.jpg', 'AWR In Memory of I Dont Remember V2', 1, 3, 3, 7),
+  	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3, 8),
+  	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3, 6),
+  	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3, 8);
+
+  INSERT INTO users (email, password, username, firstname, middlename, lastname, suffix)
+  VALUES
+    ('test@email.com', 'password', 'username1', 'test', 'test', 'test', 'test');
+  );

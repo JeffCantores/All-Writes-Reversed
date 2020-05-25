@@ -22,7 +22,7 @@
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div class="navbar-brand">
         <a href="index.php">
-          <img class="logo" src="<?php getLogo() ?>">
+          <img class="logo" src="<?php getLogo() ?>" alt="LOGO">
         </a>
       </div>
       <div class="collapse navbar-collapse">
@@ -36,8 +36,40 @@
           <input class="searchbar" type="text" name="" value="">
         </ul>
       </div>
-
       <?php getUsernameAndButton();?>
-
     </div>
     <div class="orange-break"></div>
+
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" >
+
+          <div class="modal-header ">
+            <h4 class="modal-title">LOG IN</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="containerlogo">
+              <img class="loginlogo" src="<?php getLogo() ?>" alt="LOGO"><br>
+            </div>
+
+            <div class="form-group login-form">
+              <label for="username">Username: </label><br>
+              <input class="credentials" type="text" id="username" name="username" placeholder="Username" required><br>
+              <label for="password">Password: </label><br>
+              <input class="credentials" type="password" id="password" name="password" placeholder="Password" required><br>
+            </div>
+
+            <div class="form-group login-form">
+              <button class="btn btn-secondary loginButton" type="button" id="login_button" name="login_button" >LOG IN </button>
+            </div>
+
+            <div class="signup">
+                <a class="signuplink" href="signup.php">No Account Yet? Sign Up Now!</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>

@@ -2,12 +2,42 @@ body{
 	background-color: #171616;
 }
 
+.login-form{
+	text-align: center;
+}
+
+.credentials{
+	text-align: center;
+	border-radius: 10px;
+	border-style: groove;
+}
+.signup{
+	width: auto;
+	height: auto;
+	margin: auto;
+	text-align: center;
+}
+.signuplink{
+	color:orange;
+}
+.containerlogo{
+	width: 100px;
+	height: auto;
+	margin:auto;
+}
+.loginlogo{
+	height: 100px;
+}
+.loginButton{
+	border-radius: 20px;
+}
+
 .content{
 	width: 100%;
 	height: 460px;
 	overflow: auto;
 	position:sticky;
-	top: 63px;
+	top: 0px;
 }
 
 .footer{
@@ -62,7 +92,7 @@ body{
 .logo{
 	height: 50px;
 }
-.btn{
+.log{
 	margin-right: 10px;
 }
 .orange-break{

@@ -66,7 +66,7 @@ require_once('functions/functions.php')
                     </div>
                     <!-- Dito kukunin yung address ni user -->
                     <div class="row mb-3">
-                      <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="No."> 
+                      <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="No.">
                       <input type="text" class="form-control col-3 mx-auto text-center" id="credit-number" placeholder="Street" required>
                       <input type="text" class="form-control col-4 mx-auto text-center" id="credit-number" placeholder="Barangay" required>
                       <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="City" required>
@@ -79,7 +79,7 @@ require_once('functions/functions.php')
         <a class="btn btn-dark text-uppercase" href="index.php">Cancel</a>
 
         <!-- Usually kapag may form tag na may action and method attribute no need na mag href sa button, kaso di gumagana to pag walang href :/ help -->
-        <a class="btn btn-dark text-uppercase" type="submit" href="confirm-checkout.php">Submit</a>
+        <button class="btn btn-dark text-uppercase" type="submit">Submit</button>
       </div>
       </form>
   </div>

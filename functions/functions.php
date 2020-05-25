@@ -62,7 +62,9 @@
 
 						if($cnt == 0){
 							echo '<h6 class="username">Please Log In!</h6>';
-					    echo '<button class="btn btn-light"><strong>LOG IN</strong></button>';
+							//echo '<a href="login.php">';
+					    echo '<button class="log btn btn-light" data-toggle="modal" data-target="#myModal"><strong>LOG IN</strong></button>';
+							//echo '</a>';
 						} else {
 							$selectUser = 'SELECT username FROM users
 								WHERE id = $dir["user_id"]';
@@ -71,7 +73,7 @@
 						 	$dir = $user->fetch_assoc();
 
 							echo '<h6 class="username">@'.$dir["username"].'</h6>';
-							echo '<button class="btn btn-light"><strong>LOG OUT</strong></button>';
+							echo '<button class="log btn btn-light"><strong>LOG OUT</strong></button>';
 						}
 				}
 			}catch (Exception $e){

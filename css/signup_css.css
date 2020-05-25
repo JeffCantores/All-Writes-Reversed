@@ -1,0 +1,36 @@
+.component{
+	height: 458px;
+	width: 100%;
+	position: sticky;
+  top: 0px; 
+	padding: 50px;
+	overflow: auto;
+}
+.signupcontainer{
+  width: 500px;
+	height: auto;
+  background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	margin:auto;
+  text-align: center;
+}
+
+.textbox{
+  text-align: center;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  border-style:groove;
+}
+
+.labels{
+  width: 163px;
+  margin: auto;
+}
+
+.containers{
+  width: 420px;
+  display: inline-block;
+}

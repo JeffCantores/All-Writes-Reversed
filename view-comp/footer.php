@@ -21,5 +21,6 @@
     <script src="js/view-item-price.js"></script>
     <link rel="stylesheet" type="text/css" href="css/home_page_css.css">
     <link rel="stylesheet" type="text/css" href="css/view_item_css.css">
+    <link rel="stylesheet" type="text/css" href="css/signup_css.css">
   </body>
 </html>

@@ -57,7 +57,7 @@
     color_id INT(6) UNSIGNED, FOREIGN KEY (color_id) REFERENCES colors(id),
     price_id INT(6) UNSIGNED, FOREIGN KEY (price_id) REFERENCES prices(id),
     category_id INT(6) UNSIGNED, FOREIGN KEY (category_id) REFERENCES categories(id),
-    stock INT(6),
+    stock INT(6)
   );
 
   CREATE TABLE IF NOT EXISTS payment_method (
@@ -117,7 +117,7 @@
     ('COD'),
     ('CC');
 
-  INSERT INTO products (img_dir, name, color_id, price_id, category_id)
+  INSERT INTO products (img_dir, name, color_id, price_id, category_id, stock)
   VALUES
   	('https://i.imgur.com/BU70Crq.jpg', 'AWR Logo Tee V1', 1, 1, 1, 6),
   	('https://i.imgur.com/vVC1O9P.jpg', 'AWR Logo Tee V2', 2, 1, 1, 8),
@@ -130,8 +130,3 @@
   	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3, 8),
   	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3, 6),
   	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3, 8);
-
-  INSERT INTO users (email, password, username, firstname, middlename, lastname, suffix)
-  VALUES
-    ('test@email.com', 'password', 'username1', 'test', 'test', 'test', 'test');
-  );

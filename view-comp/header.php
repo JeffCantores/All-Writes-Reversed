@@ -66,10 +66,69 @@
             </div>
 
             <div class="signup">
-                <a class="signuplink" href="signup.php">No Account Yet? Sign Up Now!</a>
+                <button onclick="signup();" class="signuplink" data-toggle="modal" data-target="#signupModal">No Account Yet? Sign Up Now!</button>
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" >
+
+          <div class="modal-header ">
+            <h4 class="modal-title">LOG IN</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <form action="register.php" method="post">
+              <div class="form-group">
+                <div class="containers">
+                  <label class="labels" for="fname">First Name</label>
+                  <label class="labels" for="mname">Middle Name</label><br>
+
+                  <input class="textbox" type="text" size="15" name="fname" id="fname" placeholder="First Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required>
+                  <input class="textbox" type="text" size="15" name="mname" id="mname" placeholder="Middle Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+
+                  <label class="labels" for="lname">Last Name</label>
+                  <label class="labels" for="suffix">Suffix</label><br>
+
+                  <input class="textbox" type="text" size="15" name="lname" id="lname" placeholder="Last Name" pattern="^[^\s]+(\s+[^\s]+)*$" title= required>
+                  <input class="textbox" type="text" size="15" name="suffix" id="suffix" placeholder="Suffix" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+                </div>
+
+                <label class="labels" for="uname">Username</label><br>
+                <input class="textbox" type="text" size="39" name="uname" id="uname" placeholder="Username" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+                <label class="labels" for="pword">Password</label><br>
+                <input class="textbox" type="password" size="39" name="pword" id="pword" placeholder="Password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                  title="Must not start with space and must contain atleast 1 Uppercase, 1 Lowercase, and 1 Numeric Character."required><br>
+                <label class="labels" for="email">Email</label><br>
+                <input class="textbox" type="text" size="39" name="email" id="email" placeholder="Email"
+                pattern="^[\w._%+-]+@[\w.-]+\.[a-z]{2,3}$" title="Invalid Email Format" required><br>
+
+                <div class="containers">
+                  <label class="labels" for="houseno">House No.</label>
+                  <label class="labels" for="street">Street</label><br>
+
+                  <input class="textbox" type="text" size="15" name="houseno" id="houseno" placeholder="House No." pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required>
+                  <input class="textbox" type="text" size="15" name="street" id="street" placeholder="Street" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+
+                  <label class="labels" for="brgy">Brgy.</label>
+                  <label class="labels" for="city">City</label><br>
+
+                  <input class="textbox" type="text" size="15" name="brgy" id="brgy" placeholder="Brgy." pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required>
+                  <input class="textbox" type="text" size="15" name="city" id="city" placeholder="City" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+                </div>
+              </div>
+              <div class="form-group">
+                <input class="btn btn-secondary loginButton" type="submit" id="signup_button" name="signup_button" value="SIGN UP">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@
 										$cnt = $resultCurrent->num_rows;
 
 										echo '<div class="form-group">';
-											if($cnt == 0){
+											if(!isset($_SESSION['username']))	{
 												echo '<input type="submit" class="add-to-cart" value="ADD TO CART" disabled>';
 											} else {
 												echo '<input type="submit" class="add-to-cart" value="ADD TO CART">';

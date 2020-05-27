@@ -18,6 +18,7 @@ body{
 	text-align: center;
 }
 .signuplink{
+	border:none;
 	color:orange;
 }
 .containerlogo{

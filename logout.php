@@ -13,7 +13,8 @@
         $deleteCurrentUser = 'DELETE FROM currentuser WHERE currentuser.id = '.$cuser['id'];
         $result = $db->query($deleteCurrentUser);
 
-        unset($_SESSION['username']);
+      //  unset($_SESSION['username']);
+        session_destroy();
 
         header('Refresh:0; url="index.php"');
       }

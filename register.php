@@ -6,7 +6,6 @@
       isset($_POST['uname']) && isset($_POST['pword']) && isset($_POST['houseno']) && isset($_POST['street']) && isset($_POST['brgy']) && isset($_POST['city'])){
     //call sign-up function
     signup();
-
     header("Location: index.php");
   }
 ?>

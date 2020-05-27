@@ -59,7 +59,7 @@
 					if(!isset($_SESSION['username'])){
 						echo '<h6 class="username">Please Log In!</h6>';
 						//echo '<a href="login.php">';
-						echo '<button class="log btn btn-light" data-toggle="modal" data-target="#myModal"><strong>LOG IN</strong></button>';
+						echo '<button class="log btn btn-light" data-toggle="modal" data-target="#loginModal"><strong>LOG IN</strong></button>';
 					} else {
 						echo '<h6 class="username">@'.$_SESSION['username'].'</h6>';
 						echo '<form class="" action="logout.php" method="post">

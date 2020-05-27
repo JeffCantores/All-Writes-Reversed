@@ -1,4 +1,5 @@
 <?php
+  session_start();
   function isActive($page) {
     return strpos($_SERVER['REQUEST_URI'], $page);
   }
@@ -40,7 +41,7 @@
     </div>
     <div class="orange-break"></div>
 
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="loginModal" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content" >
 
@@ -54,22 +55,21 @@
               <img class="loginlogo" src="<?php getLogo() ?>" alt="LOGO"><br>
             </div>
 
-            <div class="form-group login-form">
-              <label for="username">Username: </label><br>
-              <input class="credentials" type="text" id="username" name="username" placeholder="Username" required><br>
-              <label for="password">Password: </label><br>
-              <input class="credentials" type="password" id="password" name="password" placeholder="Password" required><br>
-            </div>
-
-            <div class="form-group login-form">
-              <button class="btn btn-secondary loginButton" type="button" id="login_button" name="login_button" >LOG IN </button>
-            </div>
-
+            <form action="login.php" method="POST">
+              <div class="form-group login-form">
+                <label for="username">Username: </label><br>
+                <input class="credentials" type="text" id="username" name="username" placeholder="Username" required><br>
+                <label for="password">Password: </label><br>
+                <input class="credentials" type="password" id="password" name="password" placeholder="Password" required><br>
+              </div>
+              <div class="form-group login-form">
+                <input type="submit" class="btn btn-secondary loginButton" id="login_button" name="login_button" value="LOG IN">
+              </div>
+            </form>
             <div class="signup">
-                <button onclick="signup();" class="signuplink" data-toggle="modal" data-target="#signupModal">No Account Yet? Sign Up Now!</button>
+                <button onclick="signup();" class="signuplink" data-toggle="modal" data-target="#signupModal" style="color:orange; border:none; background:none;">No Account Yet? Sign Up Now!</button>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -78,14 +78,14 @@
       <div class="modal-dialog">
         <div class="modal-content" >
 
-          <div class="modal-header ">
-            <h4 class="modal-title">LOG IN</h4>
+          <div class="modal-header">
+            <h4 class="modal-title">SIGN IN</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
           <div class="modal-body">
             <form action="register.php" method="post">
-              <div class="form-group">
+              <div class="form-group login-form">
                 <div class="containers">
                   <label class="labels" for="fname">First Name</label>
                   <label class="labels" for="mname">Middle Name</label><br>
@@ -124,7 +124,7 @@
                   <input class="textbox" type="text" size="15" name="city" id="city" placeholder="City" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group login-form">
                 <input class="btn btn-secondary loginButton" type="submit" id="signup_button" name="signup_button" value="SIGN UP">
               </div>
             </form>

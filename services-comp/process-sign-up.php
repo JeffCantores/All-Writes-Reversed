@@ -33,7 +33,7 @@
           }
 
           if(!$unique){
-            echo '<script>alert("Username already taken");</script>';
+            $_SESSION['signup-error'] = "Username already taken";
           } else {
             //insert into database values
             $insertUserQuery = 'INSERT INTO users (email, password, username, firstname, middlename, lastname, suffix)

@@ -41,7 +41,7 @@ try {
                 echo "<div class='buttons'>";
                 echo " <div class='select-all'><input type='checkbox' class='select-all-items' id='select-all' onclick='checkboxFunction()'>";
                     echo "<strong>SELECT ALL</strong>";
-                    echo "<button class='btn btn-dark btn-sm' id='check-out-button' onclick='purchaseFunction()'><strong>CHECKOUT</strong></button>";
+                    echo "<a class='btn btn-dark btn-sm' id='check-out-button' href='checkout-form.php' onclick='purchaseFunction()'><strong>CHECKOUT</strong></a>";
                 echo "</div>";
               echo "</div>";
             echo "</div>";

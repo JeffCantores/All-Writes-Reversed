@@ -1,6 +1,9 @@
 <?php
 require_once('view-comp/header.php');
-require_once('functions/functions.php')
+require_once('functions/functions.php');
+
+// Start the session
+session_start();
 ?>
 
 <div class="container h-100">

@@ -2,10 +2,9 @@
 require_once('view-comp/header.php');
 require_once('functions/functions.php');
 
-// Start the session
-session_start();
 ?>
 
+<div class="content">
 <div class="container h-100">
   <div class="card">
     <div class="card-header text-center">
@@ -14,7 +13,7 @@ session_start();
     <div class="border card-body bg-dark">
           <div class="col-sm-9 col-md-6 col-lg-12">
             <!-- Lahat ng checkout information dito kukunin sa form kaso di gumagana submit button unless lagyan ko href :/ -->
-            <form class="border" action="confirm-checkout.php" method="get">
+            <form class="border" action="confirm-checkout.php" method="post">
 
               <!-- Payment Method Section -->
               <h2 class="border px-5 py-2 text-white font-weight-bold">Payment Method</h2>
@@ -43,16 +42,16 @@ session_start();
                     <div class="container-fluid text-white">
                       <label class="p-2 col-8 text-right" for="credit-number">Credit Number</label>
                       <input type="text" class="form-control col-4 float-right"
-                      id="credit-number" minlength="16" maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                      id="credit-number" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" placeholder="xxxx-xxxx-xxxx-xxxx" required>
 
                       <!-- Di ko alam kung anong format ng date for the mean time ito muna lagay ko sa place holder dd/mm/yy -->
                       <label class="p-2 col-8 text-right" for="expiry-date">Expiry Date</label>
-                      <input type="date" class="form-control col-4 float-right"
-                      id="expiry-date" placeholder="dd/mm/yy" required>
+                      <input type="text" class="form-control col-4 float-right"
+                      id="expiry-date" pattern="^((0[1-9])|(1[0-2]))[\/\.\-]*((0[0-9])|(1[1-9]))$" placeholder="MM/YY" required>
 
                       <label class="p-2 col-8 text-right" for="cvv">CVV</label>
-                      <input type="text" class="form-control col-4 float-right"
-                      id="cvv" minlength="3" maxlength="4" placeholder="Card Verification Value" required>
+                      <input pattern="\d{3}" type="text" class="form-control col-4 float-right"
+                      id="cvv" placeholder="Card Verification Value" required>
                     </div>
                   </div>
                 </div>
@@ -62,14 +61,14 @@ session_start();
                   <div class="container-fluid col-12 text-white">
                     <!-- Labels ng text areas -->
                     <div class="row">
-                      <label class="p-2 col-2 text-center mx-auto" for="credit-number">Street Number</label>
+                      <label class="p-2 col-2 text-center mx-auto" for="credit-number">House Number</label>
                       <label class="p-2 col-3 text-center mx-auto" for="credit-number">Street Name</label>
                       <label class="p-2 col-4 text-center mx-auto" for="credit-number">Barangay</label>
                       <label class="p-2 col-2 text-center mx-auto" for="credit-number">City</label>
                     </div>
                     <!-- Dito kukunin yung address ni user -->
                     <div class="row mb-3">
-                      <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="No.">
+                      <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="No." required>
                       <input type="text" class="form-control col-3 mx-auto text-center" id="credit-number" placeholder="Street" required>
                       <input type="text" class="form-control col-4 mx-auto text-center" id="credit-number" placeholder="Barangay" required>
                       <input type="text" class="form-control col-2 mx-auto text-center" id="credit-number" placeholder="City" required>
@@ -86,6 +85,7 @@ session_start();
       </div>
       </form>
   </div>
+</div>
 </div>
 <?php
 require_once('view-comp/footer.php');

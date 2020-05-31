@@ -4,8 +4,8 @@ require_once('functions/functions.php');
 
 ?>
 
-<div class="content">
-<div class="container h-100">
+<div class="content py-5">
+<div class="container">
   <div class="card">
     <div class="card-header text-center">
       <h1 class="text-uppercase font-weight-bold">Checkout Form</h1>
@@ -79,8 +79,6 @@ require_once('functions/functions.php');
             </div>
       <div class="card-footer d-flex justify-content-around text-white">
         <a class="btn btn-dark text-uppercase" href="index.php">Cancel</a>
-
-        <!-- Usually kapag may form tag na may action and method attribute no need na mag href sa button, kaso di gumagana to pag walang href :/ help -->
         <button class="btn btn-dark text-uppercase" type="submit">Submit</button>
       </div>
       </form>

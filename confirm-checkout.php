@@ -3,7 +3,8 @@ require_once('view-comp/header.php');
 require_once('functions/functions.php')
 ?>
 
-<div class="container h-100">
+<div class="content py-5">
+<div class="container">
   <div class="card">
     <div class="card-header text-center">
       <h1 class="text-uppercase font-weight-bold">Confirm Checkout</h1>
@@ -96,6 +97,7 @@ require_once('functions/functions.php')
       <a class="btn btn-dark text-uppercase" href="#">Confirm</a>
     </div>
   </div>
+</div>
 </div>
 
 

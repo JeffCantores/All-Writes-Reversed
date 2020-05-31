@@ -16,7 +16,8 @@
           $user = $result->fetch_assoc();
 
           if(isset($user['username'])){
-            if(password_verify($loginPassword, $user['password'])){
+            $pword = hash('md5', $loginPassword);
+            if($user['password'] == $pword){
               $_SESSION['username'] = $user['username'];
 
               $insertCurrentUserQuery = 'INSERT INTO currentuser (user_id)

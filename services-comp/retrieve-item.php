@@ -48,7 +48,7 @@
 											echo '<input class="uneditable" name="color" size="20" type="text" value="'.$product->__get('productColor').'" readonly><br>';
 											echo '<input onchange="computePrice()" id="qty" class="uneditable" name="qty" size="29" type="number" value="1" min=1 ><br>';
 
-											echo '<input id="price" class="uneditable" name="color" size="20" type="text" value="'.$itemPrice.'" readonly><br>';
+											echo '<input id="price" class="uneditable" name="price" size="20" type="text" value="'.$itemPrice.'" readonly><br>';
 										echo '</div>';
 
 										$selectCurrent = 'SELECT user_id FROM currentuser';

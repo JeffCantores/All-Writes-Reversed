@@ -62,9 +62,9 @@
 						echo '<button class="log btn btn-light" data-toggle="modal" data-target="#loginModal"><strong>LOG IN</strong></button>';
 					} else {
 						echo '<h6 class="username">@'.$_SESSION['username'].'</h6>';
-						echo '<form class="" action="logout.php" method="post">
+						echo '<a href="logout.php">
 										<input class="log btn btn-light" type="submit" value="LOG OUT">
-									</form>';
+									</a>';
 					}
 				}
 			}catch (Exception $e){

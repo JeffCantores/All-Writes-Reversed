@@ -1,4 +1,8 @@
-<?php require_once('view-comp/header.php'); require_once('services-comp/retrieve-item.php')?>
+<?php
+      session_start();
+			require_once('view-comp/header.php');
+			require_once('services-comp/retrieve-item.php')
+?>
 <?php
 	// if(isset($_SESISON['addtocart'])){
 	// 	<div class="alert alert-success">

@@ -16,7 +16,7 @@
             $userID = $resultUserID->fetch_assoc();
 
             if($userID){
-              $insertToCart = 'INSERT INTO cart(qty, price, product_id, user_id) VALUES (?,?,?,?);';
+              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id) VALUES (?,?,?,?)';
               $stmt = $db->prepare($insertToCart);
               $stmt->bind_param('iiii', $qty, $price, $prodID['prodID'], $userID['userID']);
               $stmt->execute();

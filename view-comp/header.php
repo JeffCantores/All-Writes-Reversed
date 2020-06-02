@@ -1,5 +1,4 @@
 <?php
-  session_start();
   function isActive($page) {
     return strpos($_SERVER['REQUEST_URI'], $page);
   }

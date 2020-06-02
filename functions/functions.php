@@ -113,4 +113,34 @@
 		}
 	}
 
+	function getUser(){
+		try {
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
+				$dbError = mysqli_connect_errno();
+				if($dbError){
+						throw new Exception("DB CONNECTION ERROR");
+				}else{
+					$selectCurrentUser = 'SELECT * FROM currentuser';
+					$resultCurrent = $db->query($selectCurrentUser);
+					$resultCurrentCnt = $resultCurrent->num_rows;
+					if($resultCurrentCnt >=1){
+						$currentUserID = $result->fetch_assoc();
+						$selectCurrentUserID = 'SELECT username FROM users where users.id = "'.$currentUserID['id'].'"';
+						$result = $db->query($selectCurrentUserID);
+						$resultCnt = $result->num_rows;
+
+						if($resultCnt >= 1){
+							$currentUsername = $result->fetch_assoc();
+							$_SESSION['username'] = $currentUsername['id'];
+						} else {
+							throw new Exception('ERROR GETTING USERNAME');
+						}
+
+					}
+				}
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+
+	}
 ?>

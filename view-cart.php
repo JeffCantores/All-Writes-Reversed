@@ -1,4 +1,9 @@
 <?php
+      session_start();
+      if(!isset($_SESSION['username'])){
+        $_SESSION['login-first'] = "Please Log In First!";
+        header("Location: index.php?openmodal=1");
+      }
       require_once('services-comp/retrieve-item.php');
       require_once('model/product-class.php');
       require_once('view-comp/header.php');

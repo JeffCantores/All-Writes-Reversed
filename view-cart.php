@@ -1,15 +1,20 @@
 <?php
       session_start();
       if(!isset($_SESSION['username'])){
-        $_SESSION['login-first'] = "Please Log In First!";
-        header("Location: index.php?openmodal=1");
+        $_SESSION['login-first'] = "To be able to view the cart, please Log In first!";
+        header("Location: index.php?openmodal=true");
+
       }
       require_once('services-comp/retrieve-item.php');
       require_once('model/product-class.php');
       require_once('services-comp/get-cart-items.php');
       require_once('view-comp/header.php');
-?>
 
+      if ( isset($_GET['openmodal']) && $_GET['openmodal'] === 'true' ){
+          showModal();
+        }
+?>
+<center>
   <div class="cart-container">
     <div class="cart">
       <div class="cart-header">
@@ -27,10 +32,11 @@
       <hr class="style">
 
       <div class="cart-footer">
-        asasdasdasd<br>
+        asasdasdasd
+        <br>
       </div>
 
     </div>
   </div>
-
+</center>
 <?php require_once('view-comp/footer.php') ?>

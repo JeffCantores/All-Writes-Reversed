@@ -33,26 +33,26 @@
 
               // display here yung sa cart mismo
               // please update - create ng
+              //Inayos ko siya ng kaunti - Jep
               echo
-              '<div class="row">
-                <div class="radioButton">
-                  <input type="radio" id="'.$productName.'" name="order" value="'.$productName.'">
-                </div>
-                <div class="img">
-                  <img class="cart-item-img" src = "'.$products['img_dir'].'">
-                </div>
+              '<div class="row" >
+
+              <div class="custom-control custom-radio col-3">
+                <input type="radio" id="'.$productName.'" name="order" class="custom-control-input" value="'.$productName.'">
+                <label class="custom-control-label" for="customRadio1"><img class="cart-item-img" src = "'.$products['img_dir'].'" style="height: 135px; width: 145px;"></label>
+              </div>
+
                 <div class="details">
                   <input class="uneditable" name="name" size="20" type="text" value="'.$products['name'].'" readonly><br>
                   <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
                   <input onchange="" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
 
                   <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
+                  <button class="btn btn-outline-light btn-sm">UPDATE</button>
+                  <button class="btn btn-outline-light btn-sm">REMOVE</button>
                 </div>
-                <div class="buttons">
-                  <button>UPDATE</button>
-                  <button>REMOVE</button>
-                </div>
-              </div><br>';
+              </div>
+              <br>';
             }
 
           }

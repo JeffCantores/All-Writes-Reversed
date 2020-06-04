@@ -15,9 +15,12 @@
       <script src="https://kit.fontawesome.com/e4cf9541ab.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/view_cart.css">
+    <script type="text/javascript" src="../js/view-cart.js"></script>
+
 
   </head>
-  <body onload="ready()">
+  <body>
+
     <!-- hello-world.php or hello_world.php -->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">
       <div class="navbar-brand">

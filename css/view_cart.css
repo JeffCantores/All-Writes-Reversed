@@ -14,7 +14,11 @@
 }
 
 .cart-header{
-  text-align: center;
+  color: white;
+}
+
+.cart-footer{
+  color: white;
 }
 
 hr.style{

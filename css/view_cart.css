@@ -1,35 +1,26 @@
-.jeff{
-  height: 510px;
+.cart-container{
+  width: 100%;
+  height: 74%;
+}
+
+.cart{
+  margin: auto;
+  margin-top: 2%;
+  height: auto;
+  width: 50%;
   background-color: white;
   border-radius: 10px;
+  padding: 20px;
 }
 
-.view-cart-items{
-  border-top: white;
-  border-radius: 10px;
-}
-
-.title{
+.cart-header{
   text-align: center;
-  font-size: 40px;
-  color: black;
 }
 
-.body{
-  height: 320px;
-  border-radius: 10px;
-  background-color: black;
-  color: White;
+hr.style{
+  border: 1px solid black;
 }
 
-.total-price{
-  margin-right: 10px;
-  float: right;
-  background-color: gray;
-  font-size: 24px;
-}
-
-.btn-dark{
-  float: right;
-  width: 200px;
+.cart-item-img{
+  height: 100px;
 }

@@ -55,7 +55,7 @@
                   <button class="btn btn-dark btn-sm" onclick="removeCartItem()">REMOVE</button>
                 </div>
               </div>
-              <br>';
+              <br><br>';
             }
 
           }

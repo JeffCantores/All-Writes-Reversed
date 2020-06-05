@@ -16,7 +16,10 @@
 .cart-body{
   height: 74%;
 	overflow: auto;
+<<<<<<< HEAD
   position: absolute;
+=======
+>>>>>>> 2fca0f95231c96c8f441d7fa034313223731c956
 }
 
 hr.style{

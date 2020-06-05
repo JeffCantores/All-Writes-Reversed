@@ -124,7 +124,7 @@
 					$resultCurrent = $db->query($selectCurrentUser);
 					$resultCurrentCnt = $resultCurrent->num_rows;
 					if($resultCurrentCnt >=1){
-						$currentUserID = $result->fetch_assoc();
+						$currentUserID = $resultCurrent->fetch_assoc();
 						$selectCurrentUserID = 'SELECT username FROM users where users.id = "'.$currentUserID['id'].'"';
 						$result = $db->query($selectCurrentUserID);
 						$resultCnt = $result->num_rows;

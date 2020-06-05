@@ -34,6 +34,9 @@
               // display here yung sa cart mismo
               // please update - create ng
               //Inayos ko siya ng kaunti - Jep
+              // Make container scrollable
+              // if user clicked the same product, it will just add another quantity in the CART
+              
               echo
               '<div class="row" >
 

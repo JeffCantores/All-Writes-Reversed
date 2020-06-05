@@ -37,9 +37,9 @@
               echo
               '<div class="row" >
 
-              <div class="custom-control custom-radio col-3">
-                <input type="radio" id="'.$productName.'" name="order" class="custom-control-input" value="'.$productName.'">
-                <label class="custom-control-label" for="customRadio1"><img class="cart-item-img" src = "'.$products['img_dir'].'" style="height: 135px; width: 145px;"></label>
+              <div class="custom-control custom-checkbox col-7">
+                <input type="checkbox" id="'.$productName.'" name="order" class="custom-control-input" value="'.$productName.'">
+                <label class="custom-control-label" for="'.$productName.'"><img class="cart-item-img" src = "'.$products['img_dir'].'" style="height: 145px; width: 155px;"></label>
               </div>
 
                 <div class="details">
@@ -48,8 +48,8 @@
                   <input onchange="" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
 
                   <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
-                  <button class="btn btn-outline-light btn-sm">UPDATE</button>
-                  <button class="btn btn-outline-light btn-sm">REMOVE</button>
+                  <button class="btn btn-dark btn-sm">UPDATE</button>
+                  <button class="btn btn-dark btn-sm">REMOVE</button>
                 </div>
               </div>
               <br>';

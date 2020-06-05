@@ -6,19 +6,11 @@
 .cart{
   margin: auto;
   margin-top: 2%;
-  height: auto;
+  height: 500px;
   width: 50%;
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-}
-
-.cart-header{
-  color: white;
-}
-
-.cart-footer{
-  color: white;
 }
 
 hr.style{

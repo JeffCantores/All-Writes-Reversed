@@ -19,7 +19,7 @@
 
 
   </head>
-  <body>
+  <body onload="ready()">
 
     <!-- hello-world.php or hello_world.php -->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">

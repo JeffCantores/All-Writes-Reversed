@@ -36,7 +36,7 @@
               //Inayos ko siya ng kaunti - Jep
               // Make container scrollable
               // if user clicked the same product, it will just add another quantity in the CART
-              
+
               echo
               '<div class="row" >
 
@@ -52,7 +52,7 @@
 
                   <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
                   <button class="btn btn-dark btn-sm">UPDATE</button>
-                  <button class="btn btn-dark btn-sm">REMOVE</button>
+                  <button class="btn btn-dark btn-sm" onclick="removeCartItem()">REMOVE</button>
                 </div>
               </div>
               <br>';

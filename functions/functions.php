@@ -143,4 +143,24 @@
 		}
 
 	}
+
+	function removeCartItem(){
+		try {
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
+				$dbError = mysqli_connect_errno();
+				if($dbError){
+						throw new Exception("DB CONNECTION ERROR");
+				}else{
+					$selectCartItem = 'SELECT * FROM cart';
+					$result = $db->query($selectCartItem);
+					$cItem = $result->fetch_assoc();
+
+					$deleteCartItem = 'DELETE FROM cart WHERE cart.id = '.$cItem['id'];
+					$result = $db->query($deleteCartItem);
+
+				}
+		}catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
 ?>

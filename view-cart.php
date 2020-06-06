@@ -9,6 +9,7 @@
       require_once('services-comp/retrieve-item.php');
       require_once('model/product-class.php');
       require_once('services-comp/get-cart-items.php');
+      require_once('functions/functions.php');
 
 
       if ( isset($_GET['openmodal']) && $_GET['openmodal'] !== 'true' ){

@@ -52,7 +52,7 @@
 
                   <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
                   <button class="btn btn-dark btn-sm">UPDATE</button>
-                  <button class="btn btn-dark btn-sm" onclick="removeCartItem()">REMOVE</button>
+                  <button class="btn btn-dark btn-sm" onclick="removeCartItem() '.removeCartItem().'">REMOVE</button>
                 </div>
               </div>
               <br><br>';

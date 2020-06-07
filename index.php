@@ -1,4 +1,8 @@
 <?php
+  if(@ $_SERVER['HTTPS'] != 'on'){
+    header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    exit;
+  }
   session_start();
   require_once('view-comp/header.php');
   require_once('functions/functions.php');

@@ -10,6 +10,6 @@
     addToCart($prodQty, $prodPrice, $prodName);
 
     $productName = strtolower(str_replace(' ', '-', $prodName));
-  //  header("Location: ".$productName.".php");
+    header("Location: ".$productName.".php");
   }
 ?>

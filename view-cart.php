@@ -38,7 +38,7 @@
       <hr class="style">
 
       <div class="cart-footer">
-        asasdasdasd
+        <a href="services-comp/process-checkout.php" class="btn btn-dark btn-lg">CHECKOUT</a>
         <br>
       </div>
 

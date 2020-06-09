@@ -12,6 +12,8 @@ try {
           $updateUser = 'UPDATE cart SET checkedOut = 1 WHERE user_id ='.$result['user_id'];
           $userUpdate = $db->query($updateUser);
 
+          header("Location: ../checkout-form.php");
+
           // $affectedrows = $userUpdate->affected_rows;
 
           // if ($affectedrows != 0) {

@@ -1,6 +1,7 @@
 <?php
 	require_once('model/product-class.php');
 	function getItemDetails($itemName){
+
 		try{
 			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
 	   		$dbError = mysqli_connect_errno();
@@ -9,7 +10,7 @@
 		    }else{
 		        $selectQuery =
 						'SELECT
-							products.id as prod_id, img_dir, name, colors.color, prices.price, categories.category
+							products.id as prod_id, img_dir, name, colors.color, prices.price, categories.category, stock
 						FROM products
 							INNER JOIN colors
 								ON colors.id = products.color_id
@@ -34,7 +35,20 @@
 								sessionStorage.setItem("price", <?php echo $itemPrice; ?>);
 							</script>
 						<?php
-
+						if(isset($_SESSION['addtocart'])){
+							if($_SESSION['addtocart'] == 'Successfully added in your cart!'){
+								echo '<div class="alert alert-success" role="alert">';
+							}
+							if($_SESSION['addtocart'] == 'Item already in your cart!'){
+								echo '<div class="alert alert-danger" role="alert">';
+							}
+							echo '<center>'.$_SESSION['addtocart'].'
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button></center>
+										</div>';
+							unset($_SESSION['addtocart']);
+						}
 		        echo '<div class="products">';
  							echo '<div class="row">';
 								echo '<div class="item-img col-6">';
@@ -56,10 +70,13 @@
 										$cnt = $resultCurrent->num_rows;
 
 										echo '<div class="form-group">';
-											if(!isset($_SESSION['username']))	{
+											if(!isset($_SESSION['username']) || $dir['stock'] <= 0)	{
 												echo '<input type="submit" class="add-to-cart" value="ADD TO CART" disabled>';
 											} else {
 												echo '<input type="submit" class="add-to-cart" value="ADD TO CART">';
+											}
+											if ($dir['stock'] <= 0) {
+													echo '<div class="alert alert-danger" role="alert"><center>OUT OF STOCK</center></div>';
 											}
 										echo '</div>';
 									echo '</form >';

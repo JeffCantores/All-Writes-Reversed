@@ -45,4 +45,7 @@
     </div>
   </div>
 </center>
-<?php require_once('view-comp/footer.php') ?>
+<?php
+  
+  require_once('view-comp/footer.php');
+?>

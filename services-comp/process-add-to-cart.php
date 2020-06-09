@@ -19,7 +19,9 @@
              $resultCartItems = $db->query($cart_item);
              $count = $resultCartItems->num_rows;
              if ($count>0) {
+                 $_SESSION['addtocart'] = 'Item already in your cart!';
                 throw new Exception("Item already in Cart");
+
              }else {
                 $false = 0;
                 $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, checkedOut) VALUES (?,?,?,?,?)';
@@ -27,9 +29,10 @@
                 $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], $false);
                 $stmt->execute();
                 if(!$stmt){
-                throw new Exception("EXCEPTION INSERT");
+                  throw new Exception("EXCEPTION INSERT");
+                  //$_SESSION['addtocart'] = 'FALSE';
                 } else {
-                  $_SESSION['addtocart'] = 'TRUE';
+                   $_SESSION['addtocart'] = 'Successfully added in your cart!';
                   $db->commit();
                   $stmt->close();
                 }

@@ -14,6 +14,4 @@ function fetchDetails($qty,$price, $productName){
   }
 
 }
-
-}
  ?>

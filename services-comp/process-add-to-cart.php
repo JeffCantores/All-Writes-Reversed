@@ -18,9 +18,10 @@
 
 
             if($userID){
-              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, isCheckedOut) VALUES (?,?,?,?,?)';
+              $false = 0;
+              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, checkedOut) VALUES (?,?,?,?,?)';
               $stmt = $db->prepare($insertToCart);
-              $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], 0);
+              $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], $false);
               $stmt->execute();
 
               if(!$stmt){
@@ -36,7 +37,7 @@
           }
         }
     } catch (Exception $e) {
-      echo $e-getMessage();
+      echo $e->getMessage();
     }
 
   }

@@ -1,5 +1,9 @@
 <?php
       session_start();
+      if(@ $_SERVER['HTTPS'] == 'on'){
+        header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+        exit;
+      }
       if(!isset($_SESSION['username'])){
         $_SESSION['login-first'] = "To be able to view the cart, please Log In first!";
         header("Location: index.php?openmodal=true");

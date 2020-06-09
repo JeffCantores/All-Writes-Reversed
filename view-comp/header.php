@@ -20,7 +20,7 @@
 
 
   </head>
-  <body onload="ready()">
+  <body>
 
     <!-- hello-world.php or hello_world.php -->
     <div class="navbar navbar-expand-lg navbar-dark bg-dark header">
@@ -54,6 +54,18 @@
           </div>
 
           <div class="modal-body">
+
+            <?php
+              if(isset($_SESSION['login-error'])){
+                echo '<div class="alert alert-danger" role="alert">
+                        <center>'.$_SESSION['login-error'].'
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button></center>
+                      </div>';
+              }
+            ?>
+
             <div class="containerlogo">
               <img class="loginlogo" src="<?php getLogo() ?>" alt="LOGO"><br>
             </div>
@@ -87,6 +99,18 @@
           </div>
 
           <div class="modal-body">
+
+            <?php
+              if(isset($_SESSION['signup-error'])){
+                echo '<div class="alert alert-danger" role="alert">
+                        <center>'.$_SESSION['signup-error'].'
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button></center>
+                      </div>';
+              }
+            ?>
+
             <form action="register.php" method="post">
               <div class="form-group login-form">
                 <div class="containers">

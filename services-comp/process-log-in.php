@@ -30,7 +30,7 @@
               $_SESSION['login-error'] = "Incorrect Password.";
             }
           } else {
-              $_SESSION['login-error'] = "Username doesn\'t exist.";
+              $_SESSION['login-error'] = "Username doesn't exist.";
           }
         }
     } catch (Exception $e) {

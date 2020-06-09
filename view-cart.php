@@ -1,5 +1,9 @@
 <?php
       session_start();
+      if(@ $_SERVER['HTTPS'] == 'on'){
+        header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+        exit;
+      }
       if(!isset($_SESSION['username'])){
         $_SESSION['login-first'] = "To be able to view the cart, please Log In first!";
         header("Location: index.php?openmodal=true");
@@ -34,7 +38,7 @@
       <hr class="style">
 
       <div class="cart-footer">
-        asasdasdasd
+        <a href="services-comp/process-checkout.php" class="btn btn-dark btn-lg">CHECKOUT</a>
         <br>
       </div>
 

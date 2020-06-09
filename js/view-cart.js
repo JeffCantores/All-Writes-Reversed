@@ -1,7 +1,3 @@
-function showModal(){
-			$("#loginModal").modal('show');
-}
-
 
 
 
@@ -16,6 +12,23 @@ function ready(){
 
 }
 
+function updateTotalPrice(price){
+	//Get the parent of cart item == cart items
+	var cartItems = document.getElementsByClassName('cart-items')[0];
+	var cartItemList = cartItems.getElementsByClassName('cart-item');
+
+	var total = 0;
+
+	for(var i = 0; i < cartItemList.length; i++){
+		var priceElement = cartItemList[i].getElementsByClassName('cart-item-price')[0];
+		var price = parseFloat(priceElement.innerHTML.replace('Php', ''));
+
+		total += price //(price * quantityElement.value;
+	}
+
+	console.log(total);
+	document.getElementsByClassName('cart-total-price')[0].innerHTML = "Php " + total;
+}
 
 
 // remove item from cart button (not implemented yet)
@@ -47,6 +60,7 @@ function addItemToCartItems(title, price, image, button, image2){
 
 			return;
 		}
+
 	}
 
 	// create new element -- row cart item

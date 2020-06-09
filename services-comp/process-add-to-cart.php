@@ -16,6 +16,7 @@
             $userID = $resultUserID->fetch_assoc();
 
             if($userID){
+<<<<<<< HEAD
               $selectProdID;
               $cart_item = 'SELECT * from cart WHERE product_id = '.$prodID['prodID'];
               $count = $cart_item->num_rows();
@@ -26,6 +27,13 @@
                 $stmt = $db->prepare($insertToCart);
                 $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], 0);
                 $stmt->execute();
+=======
+              $false = 0;
+              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, checkedOut) VALUES (?,?,?,?,?)';
+              $stmt = $db->prepare($insertToCart);
+              $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], $false);
+              $stmt->execute();
+>>>>>>> b3595cb3cb31232eaa22fb75645db32ae648b80e
 
                 if(!$stmt){
                   throw new Exception("EXCEPTION INSERT");

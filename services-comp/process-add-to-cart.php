@@ -28,6 +28,8 @@
                 throw new Exception("EXCEPTION INSERT");
               } else {
                 $_SESSION['addtocart'] = 'TRUE';
+                $db->commit();
+                $stmt->close();
               }
             } else {
               throw new Exception("EXCEPTION USERID");

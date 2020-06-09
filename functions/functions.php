@@ -144,18 +144,23 @@
 
 	}
 
-	function removeCartItem(){
+	function removeCartItem($prodName){
 		try {
 			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
 				$dbError = mysqli_connect_errno();
 				if($dbError){
 						throw new Exception("DB CONNECTION ERROR");
 				}else{
-					$selectCartItem = 'SELECT * FROM cart';
+					$selectCartItem = 'SELECT products.id as prodID FROM products WHERE name = "'.$prodName.'"';
 					$result = $db->query($selectCartItem);
 					$cItem = $result->fetch_assoc();
 
-					$deleteCartItem = 'DELETE FROM cart WHERE cart.id = '.$cItem['id'];
+					$selectUserID = 'SELECT users.id as userID FROM users WHERE username = "'.$_SESSION['username'].'"';
+					$resultUserID = $db->query($selectUserID);
+					$userID = $resultUserID->fetch_assoc();
+
+
+					$deleteCartItem = 'DELETE FROM cart WHERE product_id = '.$cItem['prodID'].' AND user_id = '.$userID['userID'];
 					$result = $db->query($deleteCartItem);
 
 				}

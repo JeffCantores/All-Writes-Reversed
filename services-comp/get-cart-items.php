@@ -16,6 +16,7 @@
             $resultCartProducts = $db->query($selectCartProducts);
             $cartCnt = $resultCartProducts->num_rows;
 
+            echo '<form action="../checkout-form.php" method="POST">';
             for($ite=0; $ite < $cartCnt; $ite++){
               $cartProducts = $resultCartProducts->fetch_assoc();
 
@@ -46,18 +47,20 @@
               </div>
 
                 <div class="details">
-                  <input class="uneditable" name="name" size="20" type="text" value="'.$products['name'].'" readonly><br>
-                  <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
-                  <input onchange="" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
 
-                  <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
-                  <button class="btn btn-dark btn-sm">UPDATE</button>
-                  <button class="btn btn-dark btn-sm" onclick="removeCartItem() '.removeCartItem().'">REMOVE</button>
+                    <input class="uneditable" name="name" size="20" type="text" value="'.$products['name'].'" readonly><br>
+                    <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
+                    <input onchange="" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
+
+                    <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
+                    <button class="btn btn-dark btn-sm">UPDATE</button>
+                    <button class="btn btn-dark btn-sm" formaction="services-comp/remove-item.php">REMOVE</button>
+
                 </div>
               </div>
               <br><br>';
             }
-
+            echo '</form>';
           }
         }
     } catch (Exception $e) {

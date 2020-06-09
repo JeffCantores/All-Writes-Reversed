@@ -71,7 +71,7 @@
     price INT(6),
     product_id INT(6) UNSIGNED, FOREIGN KEY (product_id) REFERENCES products(id),
     user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id),
-    isCheckedOut BOOLEAN
+    isCheckedOut INT(1)
   );
 
   CREATE TABLE IF NOT EXISTS orders (

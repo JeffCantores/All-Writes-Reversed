@@ -15,10 +15,12 @@
             $resultUserID = $db->query($selectUserID);
             $userID = $resultUserID->fetch_assoc();
 
+
+
             if($userID){
-              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id) VALUES (?,?,?,?)';
+              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, isCheckedOut) VALUES (?,?,?,?,?)';
               $stmt = $db->prepare($insertToCart);
-              $stmt->bind_param('iiii', $qty, $price, $prodID['prodID'], $userID['userID']);
+              $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], 0);
               $stmt->execute();
 
               if(!$stmt){

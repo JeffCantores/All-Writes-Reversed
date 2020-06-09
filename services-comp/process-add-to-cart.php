@@ -15,18 +15,23 @@
             $resultUserID = $db->query($selectUserID);
             $userID = $resultUserID->fetch_assoc();
 
-
-
             if($userID){
-              $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, isCheckedOut) VALUES (?,?,?,?,?)';
-              $stmt = $db->prepare($insertToCart);
-              $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], 0);
-              $stmt->execute();
+              $selectProdID;
+              $cart_item = 'SELECT * from cart WHERE product_id = '.$prodID['prodID'];
+              $count = $cart_item->num_rows();
+              if ($count>0) {
+                throw new Exception("Item already in Cart");
+              }else {
+                $insertToCart = 'INSERT INTO cart (qty, price, product_id, user_id, isCheckedOut) VALUES (?,?,?,?,?)';
+                $stmt = $db->prepare($insertToCart);
+                $stmt->bind_param('iiiii', $qty, $price, $prodID['prodID'], $userID['userID'], 0);
+                $stmt->execute();
 
-              if(!$stmt){
-                throw new Exception("EXCEPTION INSERT");
-              } else {
-                $_SESSION['addtocart'] = 'TRUE';
+                if(!$stmt){
+                  throw new Exception("EXCEPTION INSERT");
+                } else {
+                  $_SESSION['addtocart'] = 'TRUE';
+                }
               }
             } else {
               throw new Exception("EXCEPTION USERID");
@@ -36,7 +41,7 @@
           }
         }
     } catch (Exception $e) {
-      echo $e-getMessage();
+      echo $e->getMessage();
     }
 
   }

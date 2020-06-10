@@ -5,6 +5,7 @@ function openSesame() {
   } else {
     x.style.display = "block";
   }
+  
 }
 
 function closeSesame() {

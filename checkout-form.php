@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('view-comp/header.php');
 require_once('functions/functions.php');
 require_once('services-comp/process-checkout-form.php');
@@ -34,17 +35,17 @@ require_once('services-comp/process-checkout-form.php');
                     </div>
 
 
-                  <!-- Supposedly gagana lang to kapag cash on delivery yung choice ni user -->
+                  <!-- DAPAT NASA PROCESS CHECKOUT FORM TO -->
                   <div id="creditCardInfo" class="text-center form-group col-12  py-3" style="display:none;">
                       <div class="container-fluid text-white">
                         <div class="row d-flex justify-content-center">
-                          <label class="p-2 ml-auto col-4 text-right float-left" for="credit-number">Credit Number</label>
+                          <label class="p-2 ml-auto col-4 text-right float-left" for="cardNo">Credit Number</label>
                           <input type="text" class="form-control col-4 float-left mr-auto"
                           id="credit-number" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" placeholder="xxxx-xxxx-xxxx-xxxx" required>
                         </div>
 
                         <div class="row d-flex justify-content-center">
-                          <label class="p-2 ml-auto col-4 text-right float-left" for="expiry-date">Expiry Date</label>
+                          <label class="p-2 ml-auto col-4 text-right float-left" for="exp">Expiry Date</label>
                           <input type="text" class="form-control col-4 float-left mr-auto"
                           id="expiry-date" pattern="^((0[1-9])|(1[0-2]))[\/\.\-]*((0[0-9])|(1[1-9]))$" placeholder="MM/YY" required>
                         </div>
@@ -71,12 +72,7 @@ require_once('services-comp/process-checkout-form.php');
                       <label class="p-2 col-2 text-center mx-auto" for="city">City</label>
                     </div>
                     <!-- Dito kukunin yung address ni user -->
-                    <div class="row mb-3">
-                      <input type="text" class="form-control col-2 mx-auto text-center" id="houseNo" placeholder="No." required>
-                      <input type="text" class="form-control col-3 mx-auto text-center" id="streetName" placeholder="Street" required>
-                      <input type="text" class="form-control col-4 mx-auto text-center" id="barangay" placeholder="Barangay" required>
-                      <input type="text" class="form-control col-2 mx-auto text-center" id="city" placeholder="City" required>
-                    </div>
+                    <?php getAddressInfo(); ?>
                   </div>
 
               </div>

@@ -53,7 +53,7 @@
                     <input onchange="" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
 
                     <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['price'].'" readonly><br>
-                    <button class="btn btn-dark btn-sm">UPDATE</button>
+                    <button class="btn btn-dark btn-sm" formaction="services-comp/update-item.php">UPDATE</button>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/remove-item.php">REMOVE</button>
 
                 </div>

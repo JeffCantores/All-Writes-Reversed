@@ -167,7 +167,7 @@
 					$result = $db->query($deleteCartItem);
 				}
 			} catch	(Exception $e){
-				echo $e->getMEssage();
+				echo $e->getMessage();
 			}
 		}
 ?>

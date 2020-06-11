@@ -61,7 +61,7 @@
       $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 
       if (!$file) {
-        echo "<p><strong>Your order could not be processed at this time.
+        echo "<p><strong>Your login could not be processed at this time.
             Please try again later.</strong></p>";
       }else{
 
@@ -79,7 +79,7 @@
         $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'rb'); // reading
 
           if (!$file) {
-            throw new FileNotFoundException('No users logged in.
+            throw new FileNotFoundException('Your login could not be processed at this time.
                 Please try again later.', 1);
           }else{
             while (!feof($file)){

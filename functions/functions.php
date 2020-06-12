@@ -91,7 +91,11 @@
 	   				echo '<h3 class="category">'.$category['category'].'</h3>';
 
 
-	   				$selectProducts = 'SELECT img_dir, name from products WHERE category_id ='.$category['id'].';';
+	   				$selectProducts =
+						'SELECT img_dir, name, prices.price as prodPrice from products
+							INNER JOIN prices
+								ON prices.id = products.price_id
+							WHERE category_id ='.$category['id'].';';
 	   				$resultProducts = $db->query($selectProducts);
 	   				$resultProductsCount = $resultProducts->num_rows;
 
@@ -104,7 +108,8 @@
 							echo '<div class="row display-item">';
 							echo '<a href="'.$productName.'.php"> ';
 							echo '<img class="item" src = "'.$product['img_dir'].'">';
-							echo '</a> ';
+							echo '</a><br>';
+							echo '<center><h6 style="color:white;">PhP '.$product['prodPrice'].'.00 </h6></center>';
 							echo '</div>';
 						}
 	   			}

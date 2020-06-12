@@ -30,6 +30,7 @@
           // code experiment (update statement)
           $updateItem = "UPDATE cart SET qty = ".$itemQty.", price =" .$itemPrice. " WHERE cart.product_id = ".$cItem['prodID']."";
 					$result = $db->query($updateItem);
+          $_SESSION['updated'] = 'Cart Item Updated!';
 
           saveUpdateCartItem($itemName, $itemQty, $itemPrice);
           getUpdateCartItem();

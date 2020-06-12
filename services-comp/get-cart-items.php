@@ -17,7 +17,7 @@
           $cnt = $resultCurrentUserID->num_rows;
 
           if($cnt > 0){
-            $selectCartProducts = 'SELECT qty, price, product_id FROM cart WHERE user_Id = "'.$currentID['user_id'].'"';
+            $selectCartProducts = 'SELECT qty, price as cartPrice, product_id FROM cart WHERE user_Id = "'.$currentID['user_id'].'"';
             $resultCartProducts = $db->query($selectCartProducts);
             $cartCnt = $resultCartProducts->num_rows;
 
@@ -67,7 +67,7 @@
                         <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
                         <input onchange="computePrice()" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
 
-                        <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$productPrice.'" readonly><br>
+                        <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['cartPrice'].'" readonly><br>
                         <button class="btn btn-dark btn-sm" formaction="services-comp/update-item.php">UPDATE</button>
                         <button class="btn btn-dark btn-sm" formaction="services-comp/remove-item.php">REMOVE</button>
 

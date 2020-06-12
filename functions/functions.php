@@ -165,6 +165,8 @@
 
 					$deleteCartItem = 'DELETE FROM cart WHERE product_id = '.$cItem['prodID'].' AND user_id = '.$userID['userID'];
 					$result = $db->query($deleteCartItem);
+
+					$_SESSION['removed'] = 'Item Removed from Cart!';
 				}
 			} catch	(Exception $e){
 				echo $e->getMessage();

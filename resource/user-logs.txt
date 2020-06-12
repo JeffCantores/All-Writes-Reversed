@@ -11,3 +11,11 @@
 11:27, 11th June 2020	::1	Jepcantores	 bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
 11:28, 11th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
 16:17, 11th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+12:04, 12th June 2020	::1	JepCantores
+12:04, 12th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 5	price: PHP 2250)
+12:14, 12th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 4	price: PHP 1800)
+17:36, 12th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+17:45, 12th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+17:54, 12th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+17:54, 12th June 2020	::1	Jepcantores	updated (productName: AWR Script Tee V1	qty: 3	price: PHP 1350)
+17:55, 12th June 2020	::1	Jepcantores	updated order (productName: AWR Script Tee V1	qty: 5	price: PHP 2250)

@@ -38,7 +38,7 @@
       <hr class="style">
 
       <div class="cart-footer">
-        asasdasdasd
+        <a class="btn btn-dark btn-lg" href="checkout-form.php" onclick="">CHECKOUT</a> 
         <br>
       </div>
 
@@ -46,6 +46,6 @@
   </div>
 </center>
 <?php
-  
+
   require_once('view-comp/footer.php');
 ?>

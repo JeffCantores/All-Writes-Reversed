@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/view_cart.css">
     <script type="text/javascript" src="js/view-cart.js"></script>
     <script type="text/javascript" src="js/checkout-form.js"></script>
+    <script type="text/javascript" src="js/view-item-price.js"></script>
 
 
   </head>

@@ -3,7 +3,9 @@
 ?>
 
 <?php
-  function updateCartItem($prodName, $prodQty, $prodPrice){
+  define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+
+  function updateCartItem($prodName, $prodPrice, $prodQty){
     try {
 			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
 				$dbError = mysqli_connect_errno();
@@ -15,12 +17,18 @@
           $itemQty = $prodQty;
 
 					$selectCartItem = 'SELECT * FROM cart';
-					$selectCartItem = 'SELECT products.id as prodID FROM products WHERE name = "'.$itemName.'"';
+					$selectCartItem = 'SELECT products.id as prodID, prices.price
+          FROM products
+            INNER JOIN prices
+              ON prices.id = products.price_id
+                WHERE name = "'.$itemName.'"';
+
 					$result = $db->query($selectCartItem);
 					$cItem = $result->fetch_assoc();
 
+
           // code experiment (update statement)
-          $updateItem = "UPDATE cart SET qty = '".$itemQty."', price = '".$itemPrice."' WHERE cart.product_id = ".$cItem['prodID']."'";
+          $updateItem = "UPDATE cart SET qty = ".$itemQty.", price =" .$itemPrice. " WHERE cart.product_id = ".$cItem['prodID']."";
 					$result = $db->query($updateItem);
 
           saveUpdateCartItem($itemName, $itemQty, $itemPrice);
@@ -33,20 +41,16 @@
 
     function saveUpdateCartItem($itemName, $itemQty, $itemPrice){
         $loginUsername = $_SESSION['username']; //fetch username code here
-        $prodName = $itemName;
-        $prodPrice = $itemPrice;
-        $prodQty = $itemQty;
 
         echo "<br/>".DOCUMENT_ROOT;
-
 
         $date = date('H:i, jS F Y');
         $outputString = $date."\t"
         .$_SERVER['REMOTE_ADDR']."\t"
-        .$loginUsername."\tupdated (productName: "
-        .$prodName."\tqty: "
-        .$prodQty."\tprice: PHP "
-        .$prodPrice.")\n";
+        .$loginUsername."\tupdated order (productName: "
+        .$itemName."\tqty: "
+        .$itemQty."\tprice: PHP "
+        .$itemPrice.")\n";
 
         $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

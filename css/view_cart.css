@@ -1,12 +1,13 @@
-.cart-container{
+.container{
   width: 100%;
-  height: 74%;
+  height: 71.4%;
+  margin-top: 1%;
+  /* overflow: auto; */
 }
 
 .cart{
   margin: auto;
-  margin-top: 2%;
-  height: 498px;
+  height: 395px;
   width: 50%;
   background-color: white;
   border-radius: 10px;

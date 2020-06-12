@@ -43,7 +43,7 @@
       }
 ?>
 <center>
-  <div class="cart-container">
+  <div class="container">
     <div class="cart">
       <div class="cart-header">
         <h4>YOUR CART</h4>
@@ -60,7 +60,7 @@
       <hr class="style">
 
       <div class="cart-footer">
-        <a class="btn btn-dark btn-lg" href="checkout-form.php" onclick="">CHECKOUT</a>
+        <a class="btn btn-dark btn-sm" href="checkout-form.php" onclick="">CHECKOUT</a>
         <br>
       </div>
 

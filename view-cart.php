@@ -1,7 +1,7 @@
 <?php
       session_start();
-      if(@ $_SERVER['HTTPS'] == 'on'){
-        header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+      if(@ $_SERVER['HTTPS'] != 'on'){
+        header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
         exit;
       }
       if(!isset($_SESSION['username'])){
@@ -52,16 +52,15 @@
       <hr class="style">
 
       <div class="cart-body">
-        <?php
-          getCartItems();
-        ?>
+      <?php
+        getCartItems();
+      ?>
+
       </div>
-
-      <hr class="style">
-
-      <div class="cart-footer">
-        <a class="btn btn-dark btn-sm" href="checkout-form.php" onclick="">CHECKOUT</a>
-        <br>
+      <div class="card-footer">
+        <a href="services-comp/process-checkout.php">
+          <input type="submit" class="btn btn-secondary" value = "CHECK OUT">
+        </a>
       </div>
 
     </div>

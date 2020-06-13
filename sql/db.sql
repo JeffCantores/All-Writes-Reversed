@@ -13,14 +13,6 @@
     suffix VARCHAR(225)
   );
 
-  CREATE TABLE IF NOT EXISTS cc_details (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    cc_number INT(10),
-    cc_exp VARCHAR(225),
-    cc_ccv VARCHAR(10),
-    user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id)
-  );
-
   CREATE TABLE IF NOT EXISTS address (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     house_number VARCHAR(225),
@@ -79,7 +71,6 @@
     item_id INT(6) UNSIGNED, FOREIGN KEY (item_id) REFERENCES cart(id),
     address_id INT(6) UNSIGNED, FOREIGN KEY (address_id) REFERENCES address(id),
     method_id INT(6) UNSIGNED, FOREIGN KEY (method_id) REFERENCES payment_method(id),
-    cc_id INT(6) UNSIGNED, FOREIGN KEY (cc_id) REFERENCES cc_details(id)
   );
 
   CREATE TABLE IF NOT EXISTS logo (

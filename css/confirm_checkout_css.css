@@ -20,7 +20,7 @@
 
 .checkoutItems{
   width: 64%;
-  height: 244px;
+  height: 224px;
   margin-right: 1%;
 
 }
@@ -35,7 +35,7 @@
 }
 .checkoutDetails{
   width: 34%;
-  height: 244px;
+  height: 224px;
   margin-left: 1%;
   background-color: white;
   overflow: auto;

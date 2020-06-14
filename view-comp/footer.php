@@ -25,5 +25,6 @@
     <link rel="stylesheet" type="text/css" href="css/signup_css.css">
     <link rel="stylesheet" type="text/css" href="css/checkout_form_css.css">
     <link rel="stylesheet" type="text/css" href="css/confirm_checkout_css.css">
+    <link rel="stylesheet" type="text/css" href="css/success_page_css.css">
   </body>
 </html>

@@ -13,7 +13,7 @@ try {
           $updateUser = 'UPDATE cart SET checkedOut = '.$true.' WHERE user_id ='.$result['user_id'];
           $userUpdate = $db->query($updateUser);
 
-          header("Location: ../success-page.php");
+          header("Location: ../order-success.php");
     }
 
   }catch(Exception $e){

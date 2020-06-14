@@ -26,14 +26,27 @@
 					$result = $db->query($selectCartItem);
 					$cItem = $result->fetch_assoc();
 
+          $selectUserID = "SELECT user_id FROM currentuser";
+          $resultUserID = $db->query($selectUserID);
+          $cUserID = $resultUserID->fetch_assoc();
 
+
+          $selectDetails = 'SELECT qty FROM cart WHERE cart.product_id ='.$cItem['prodID'];
+          $resultQty = $db->query($selectDetails);
+          $cQty = $resultQty->fetch_assoc();
+
+          $ogPrice = $itemPrice/$cQty['qty'];
+
+          $newPrice = $ogPrice*$itemQty;
+
+          // echo $cQty['qty'];
           // code experiment (update statement)
-          $updateItem = "UPDATE cart SET qty = ".$itemQty.", price =" .$itemPrice. " WHERE cart.product_id = ".$cItem['prodID']."";
+          $updateItem = "UPDATE cart SET qty = ".$itemQty.", price =" .$newPrice. " WHERE cart.product_id = ".$cItem['prodID'];
 					$result = $db->query($updateItem);
           $_SESSION['updated'] = 'Cart Item Updated!';
 
           saveUpdateCartItem($itemName, $itemQty, $itemPrice);
-          getUpdateCartItem();
+          //getUpdateCartItem();
 				}
 			} catch	(Exception $e){
 				echo $e->getMessage();

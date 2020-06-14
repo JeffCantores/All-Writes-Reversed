@@ -44,7 +44,6 @@
 
                   // log functions go here
                   saveAddToCart();
-                  getAddToCart();
                 }
             }
           } else {
@@ -92,25 +91,4 @@
           fclose($file);
       }
     }
-
-    function getAddToCart(){
-
-      try{
-        $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'rb'); // reading
-
-          if (!$file) {
-            throw new FileNotFoundException('Your order could not be processed at this time.
-                Please try again later.', 1);
-          }else{
-            while (!feof($file)){
-              $order = fgets($file, 999);
-              echo $order.'<br>';
-            };
-
-            fclose($file);
-          }
-        }catch(FileNotFoundException $fnfe){
-          echo $fnfe->getMessage();
-        }
-      }
 ?>

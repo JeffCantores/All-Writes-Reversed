@@ -21,7 +21,8 @@
             $resultCartProducts = $db->query($selectCartProducts);
             $cartCnt = $resultCartProducts->num_rows;
             if($cartCnt > 0){
-              echo '<div class="cart-body">';
+              echo '<div class="cart-body"><div class="formcontainer">';
+              $totalCart = 0;
               for($ite=0; $ite < $cartCnt; $ite++){
                 $cartProducts = $resultCartProducts->fetch_assoc();
 
@@ -56,15 +57,22 @@
                 <div class="details">
                     <input class="uneditable" name="name" size="20" type="text" value="'.$products['name'].'" readonly><br>
                     <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
-                    <input onchange="computePrice()" id="qty" class="uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 ><br>
-
-                    <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['cartPrice'].'" readonly><br>
+                    <input class="qty uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 >
+                    <br>
+                    <input class="price uneditable" name="price" size="20" type="text" value="'.$cartProducts['cartPrice'].'" readonly><br>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/update-item.php">UPDATE</button>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/remove-item.php">REMOVE</button>
                 </div></div></form><br><br>';
+
+                $totalCart += $cartProducts['cartPrice'];
               }
+
               echo
               '</div>
+                <div class = "cartTotal">
+                  <h6 class="totalCart">Total: PhP '.$totalCart.'</h6>
+                </div>
+              </div>
               <div class="card-footer">
                 <a href="checkout-form.php">
                   <button class="btn btn-secondary" >CHECK OUT</button>

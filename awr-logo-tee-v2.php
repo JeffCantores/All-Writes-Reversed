@@ -9,7 +9,7 @@
 ?>
 	<div class="component">
 		<div class="view-item">
-			<?php getItemDetails("AWR Script Tee V1"); ?>
+			<?php getItemDetails("AWR Logo Tee V2"); ?>
 		</div>
 	</div>
 

@@ -23,7 +23,7 @@
 	height: auto;
 }
 .item-view-img{
-	height: 200px;
+	height: 100%;
 	border-radius: 20px;
 	background-color: black;
 	padding: 10px;

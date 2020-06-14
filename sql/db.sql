@@ -104,4 +104,4 @@
   	('https://i.imgur.com/Sjid8ws.jpg', 'AWR In Memory of I Dont Remember V2', 1, 3, 3, 7),
   	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3, 8),
   	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3, 6),
-  	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic/Talksick', 3, 3, 3, 8);
+  	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic Talksick', 3, 3, 3, 8);

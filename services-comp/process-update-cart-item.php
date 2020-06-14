@@ -16,7 +16,7 @@
           $itemPrice = $prodPrice;
           $itemQty = $prodQty;
 
-					$selectCartItem = 'SELECT * FROM cart';
+					// $selectCartItem = 'SELECT * FROM cart';
 					$selectCartItem = 'SELECT products.id as prodID, prices.price
           FROM products
             INNER JOIN prices

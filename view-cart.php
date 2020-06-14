@@ -51,17 +51,10 @@
 
       <hr class="style">
 
-      <div class="cart-body">
       <?php
         getCartItems();
       ?>
-
-      </div>
-      <div class="card-footer">
-        <a href="services-comp/process-checkout.php">
-          <input type="submit" class="btn btn-secondary" value = "CHECK OUT">
-        </a>
-      </div>
+      
 
     </div>
   </div>

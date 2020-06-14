@@ -1,7 +1,7 @@
 <?php
   session_start();
   require_once('process-update-cart-item.php');
-  if(isset($_POST['name']) && isset($_POST['color']) && isset($_POST['qty']) && isset($_POST['price'])){
+  if(isset($_POST['name']) && isset($_POST['qty']) && isset($_POST['price'])){
 
     $prodName = $_POST['name'];
     $prodPrice = $_POST['price'];

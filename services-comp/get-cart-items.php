@@ -20,8 +20,8 @@
             $selectCartProducts = 'SELECT qty, price as cartPrice, product_id FROM cart WHERE user_Id = "'.$currentID['user_id'].'" and checkedOut = 0' ;
             $resultCartProducts = $db->query($selectCartProducts);
             $cartCnt = $resultCartProducts->num_rows;
-
             if($cartCnt > 0){
+              echo '<div class="cart-body">';
               for($ite=0; $ite < $cartCnt; $ite++){
                 $cartProducts = $resultCartProducts->fetch_assoc();
 
@@ -48,7 +48,7 @@
                 <?php
                 // <input type="checkbox" id="'.$productName.'" name="order" class="custom-control-input" value="'.$productName.'">
                 echo
-                '<div class="row">
+                '<form method="POST"><div class="row">
                 <div class="custom-control custom-checkbox col-7">
                   <img class="cart-item-img" src = "'.$products['img_dir'].'" style="height: 145px; width: 155px;">
                 </div>
@@ -61,8 +61,23 @@
                     <input id="price" class="uneditable" name="price" size="20" type="text" value="'.$cartProducts['cartPrice'].'" readonly><br>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/update-item.php">UPDATE</button>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/remove-item.php">REMOVE</button>
-                </div></div><br><br>';
+                </div></div></form><br><br>';
               }
+              echo
+              '</div>
+              <div class="card-footer">
+                <a href="checkout-form.php">
+                  <button class="btn btn-secondary" >CHECK OUT</button>
+                </a>
+              </div>';
+            } else {
+              echo
+              '<div class="cart-body"></div>
+              <div class="card-footer">
+                <a href="checkout-form.php">
+                  <button class="btn btn-secondary" disabled>CHECK OUT</button>
+                </a>
+              </div>';
             }
           }
         }

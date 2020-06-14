@@ -162,7 +162,6 @@
 					$result = $db->query($selectCartItem);
 					$cItem = $result->fetch_assoc();
 
-					$deleteCartItem = 'DELETE FROM cart WHERE cart.id = '.$cItem['id'];
 					$selectUserID = 'SELECT users.id as userID FROM users WHERE username = "'.$_SESSION['username'].'"';
 					$resultUserID = $db->query($selectUserID);
 					$userID = $resultUserID->fetch_assoc();

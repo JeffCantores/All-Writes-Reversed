@@ -52,11 +52,6 @@
     stock INT(6)
   );
 
-  CREATE TABLE IF NOT EXISTS payment_method (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    method VARCHAR(225)
-  );
-
   CREATE TABLE IF NOT EXISTS cart (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     qty INT(6),
@@ -64,13 +59,6 @@
     product_id INT(6) UNSIGNED, FOREIGN KEY (product_id) REFERENCES products(id),
     user_id INT(6) UNSIGNED, FOREIGN KEY (user_id) REFERENCES users(id),
     checkedOut INT(1)
-  );
-
-  CREATE TABLE IF NOT EXISTS orders (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    item_id INT(6) UNSIGNED, FOREIGN KEY (item_id) REFERENCES cart(id),
-    address_id INT(6) UNSIGNED, FOREIGN KEY (address_id) REFERENCES address(id),
-    method_id INT(6) UNSIGNED, FOREIGN KEY (method_id) REFERENCES payment_method(id),
   );
 
   CREATE TABLE IF NOT EXISTS logo (
@@ -103,11 +91,6 @@
     ('Navy Blue'),
     ('White'),
     ('Maroon');
-
-  INSERT INTO payment_method (method)
-  VALUES
-    ('COD'),
-    ('CC');
 
   INSERT INTO products (img_dir, name, color_id, price_id, category_id, stock)
   VALUES

@@ -4,7 +4,7 @@
 
 <?php
   session_start();
-
+  ob_start();
   define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 
   try {
@@ -22,8 +22,8 @@
 
       //  unset($_SESSION['username']);
 
-        // saveLogout();
-        // getLogout();
+        saveLogout();
+        getLogout();
 
         session_destroy();
 
@@ -42,7 +42,7 @@
       echo "<br/>".DOCUMENT_ROOT;
 
       $date = date('H:i, jS F Y');
-      $outputString = $date."\t "
+      $outputString = $date."\t"
       .$_SERVER['REMOTE_ADDR']."\t"
       .$loginUsername." was logged out\n";
 
@@ -81,4 +81,6 @@
           echo $fnfe->getMessage();
         }
       }
+
+    ob_end_flush();
 ?>

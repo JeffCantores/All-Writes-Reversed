@@ -32,8 +32,8 @@
               $sttmnt->bind_param("i", $user['id']);
               $sttmnt->execute();
 
-              // saveLogin();  wag idedelete (THIS IS FOR LOGGING)
-              // getLogin();
+              saveLogin();
+              getLogin();
 
             } else {
               $_SESSION['login-error'] = "Incorrect Password.";
@@ -56,7 +56,7 @@
       $date = date('H:i, jS F Y');
       $outputString = $date."\t"
       .$_SERVER['REMOTE_ADDR']."\t"
-      .$loginUsername."\n";
+      .$loginUsername."logged in\n";
 
       $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

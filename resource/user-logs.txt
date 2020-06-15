@@ -105,3 +105,11 @@
 11:43, 15th June 2020	 ::1	Jepcantores was logged out
 11:46, 15th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
 11:46, 15th June 2020	::1	Jepcantores	removed order (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+12:00, 15th June 2020	::1	JepCantores
+12:02, 15th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+12:03, 15th June 2020	::1	Jepcantores	updated order (productName: AWR Script Tee V1	qty: 4	price: PHP 1800)
+12:03, 15th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+12:04, 15th June 2020	::1	Jepcantores	removed order (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+12:04, 15th June 2020	 ::1	Jepcantores was logged out
+12:04, 15th June 2020	::1	JepCantores
+12:05, 15th June 2020	::1	Jepcantores was logged out

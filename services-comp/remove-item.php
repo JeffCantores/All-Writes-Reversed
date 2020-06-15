@@ -1,5 +1,6 @@
 <?php
   session_start();
+  ob_start();
   require_once('../functions/functions.php');
   if(isset($_POST['name'])){
 
@@ -9,4 +10,5 @@
     removeCartItem($_POST['name'], $prodPrice, $prodQty);
     header('Location: ../view-cart.php');
   }
+  ob_end_flush();
 ?>

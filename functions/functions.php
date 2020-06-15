@@ -172,8 +172,8 @@
 					$deleteCartItem = 'DELETE FROM cart WHERE product_id = '.$cItem['prodID'].' AND user_id = '.$userID['userID'];
 					$result = $db->query($deleteCartItem);
 
-					saveRemovedCartItem($prodName, $prodQty, $prodPrice);
-					getRemovedCartItem();
+					// saveRemovedCartItem($prodName, $prodQty, $prodPrice);
+					// getRemovedCartItem();
 
 					$_SESSION['removed'] = 'Item Removed from Cart!';
 				}

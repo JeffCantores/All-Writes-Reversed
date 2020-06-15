@@ -32,8 +32,8 @@
               $sttmnt->bind_param("i", $user['id']);
               $sttmnt->execute();
 
-              saveLogin();
-              getLogin();
+              // saveLogin();  wag idedelete (THIS IS FOR LOGGING)
+              // getLogin();
 
             } else {
               $_SESSION['login-error'] = "Incorrect Password.";

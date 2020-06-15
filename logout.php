@@ -22,8 +22,8 @@
 
       //  unset($_SESSION['username']);
 
-        saveLogout();
-        getLogout();
+        // saveLogout();
+        // getLogout();
 
         session_destroy();
 

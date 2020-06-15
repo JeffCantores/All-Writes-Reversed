@@ -70,7 +70,7 @@
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     item_id INT(6) UNSIGNED, FOREIGN KEY (item_id) REFERENCES cart(id),
     address_id INT(6) UNSIGNED, FOREIGN KEY (address_id) REFERENCES address(id),
-    method_id INT(6) UNSIGNED, FOREIGN KEY (method_id) REFERENCES payment_method(id),
+    method_id INT(6) UNSIGNED, FOREIGN KEY (method_id) REFERENCES payment_method(id)
   );
 
   CREATE TABLE IF NOT EXISTS logo (

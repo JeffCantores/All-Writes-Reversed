@@ -82,3 +82,6 @@
 12:00, 14th June 2020	::1	TestUsername	updated order (productName: AWR Script Tee V1	qty: 5	price: PHP 1800)
 12:00, 14th June 2020	::1	TestUsername	updated order (productName: AWR Script Tee V2	qty: 5	price: PHP 2250)
 14:32, 14th June 2020	::1	TestUsername	updated order (productName: AWR Script Tee V2	qty: 7	price: PHP 2250)
+11:00, 15th June 2020	::1	Jepcantores	bought (productName: AWR Script Tee V1	qty: 2	price: PHP 900)
+11:01, 15th June 2020	::1	Jepcantores	updated order (productName: AWR Script Tee V1	qty: 5	price: PHP 900)
+11:03, 15th June 2020	::1	Jepcantores	updated order (productName: AWR Script Tee V1	qty: 3	price: PHP 1350)

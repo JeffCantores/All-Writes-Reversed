@@ -45,7 +45,7 @@
 					$result = $db->query($updateItem);
           $_SESSION['updated'] = 'Cart Item Updated!';
 
-          saveUpdateCartItem($itemName, $itemQty, $itemPrice);
+          saveUpdateCartItem($itemName, $itemQty, $newPrice);
           //getUpdateCartItem();
 				}
 			} catch	(Exception $e){
@@ -53,7 +53,7 @@
 			}
 		}
 
-    function saveUpdateCartItem($itemName, $itemQty, $itemPrice){
+    function saveUpdateCartItem($itemName, $itemQty, $newPrice){
         $loginUsername = $_SESSION['username']; //fetch username code here
 
         echo "<br/>".DOCUMENT_ROOT;
@@ -64,7 +64,7 @@
         .$loginUsername."\tupdated order (productName: "
         .$itemName."\tqty: "
         .$itemQty."\tprice: PHP "
-        .$itemPrice.")\n";
+        .$newPrice.")\n";
 
         $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

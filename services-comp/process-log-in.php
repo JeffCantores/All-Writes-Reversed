@@ -56,7 +56,7 @@
       $date = date('H:i, jS F Y');
       $outputString = $date."\t"
       .$_SERVER['REMOTE_ADDR']."\t"
-      .$loginUsername."logged in\n";
+      .$loginUsername." logged in\n";
 
       $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

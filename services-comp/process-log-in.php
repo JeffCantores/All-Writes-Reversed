@@ -33,7 +33,7 @@
               $sttmnt->execute();
 
               saveLogin();
-              getLogin();
+              //getLogin();
 
             } else {
               $_SESSION['login-error'] = "Incorrect Password.";

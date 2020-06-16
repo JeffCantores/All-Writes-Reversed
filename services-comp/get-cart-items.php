@@ -1,9 +1,4 @@
 <?php
-
- ?>
-
-
-<?php
   function getCartItems(){
     try {
       @ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');

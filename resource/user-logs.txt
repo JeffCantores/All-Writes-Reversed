@@ -121,3 +121,11 @@
 12:14, 15th June 2020	::1	qweasd was logged out
 12:15, 15th June 2020	::1	Jepyboi logged in
 04:53, 16th June 2020	::1	 was logged out
+05:12, 16th June 2020	::1	jeffjr123 logged in
+05:12, 16th June 2020	::1	jeffjr123	bought (productName: AWR Script Tee V3	qty: 3	price: PHP 1350)
+05:13, 16th June 2020	::1	jeffjr123	bought (productName: AWR Brainless Genius	qty: 6	price: PHP 3300)
+05:14, 16th June 2020	::1	jeffjr123	updated order (productName: AWR Script Tee V3	qty: 6	price: PHP 2700)
+05:14, 16th June 2020	::1	jeffjr123	removed order (productName: AWR Brainless Genius	qty: 6	price: PHP 3300)
+05:15, 16th June 2020	::1	jeffjr123	bought (productName: AWR Script Tee V1	qty: 1	price: PHP 450)
+05:21, 16th June 2020	::1	jeffjr123	bought (productName: AWR Script Tee V2	qty: 1	price: PHP 450)
+05:57, 16th June 2020	::1	jeffjr123 was logged out

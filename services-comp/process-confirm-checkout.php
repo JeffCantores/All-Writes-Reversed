@@ -97,16 +97,18 @@
           $selectID = 'SELECT user_id FROM currentuser';
           $resultUserID = $db->query($selectID);
           $userID = $resultUserID->fetch_assoc();
+          $currentUserCnt = $resultUserID->num_rows;
 
-          $selectAddress = 'SELECT house_number, street, brgy, city FROM address WHERE user_id = '.$userID['user_id'];
-          $resultAddress = $db->query($selectAddress);
-          $userAddress = $resultAddress->fetch_assoc();
+          if($currentUserCnt>0){
+            $selectAddress = 'SELECT house_number, street, brgy, city FROM address WHERE user_id = '.$userID['user_id'];
+            $resultAddress = $db->query($selectAddress);
+            $userAddress = $resultAddress->fetch_assoc();
 
-          echo $userAddress['house_number'].'<br>';
-          echo $userAddress['street'].'<br>';
-          echo $userAddress['brgy'].'<br>';
-          echo $userAddress['city'].'<br>';
-
+            echo $userAddress['house_number'].'<br>';
+            echo $userAddress['street'].'<br>';
+            echo $userAddress['brgy'].'<br>';
+            echo $userAddress['city'].'<br>';
+          }
         }
     } catch (Exception $e) {
       echo $e-getMessage();

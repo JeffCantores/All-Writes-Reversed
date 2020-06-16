@@ -6,7 +6,7 @@
       }
       if(!isset($_SESSION['username'])){
         $_SESSION['login-first'] = "To be able to view the cart, please Log In first!";
-        header("Location: index.php?openmodal=true");
+        header("Location: index.php");
 
       }
       require_once('view-comp/header.php');
@@ -54,7 +54,7 @@
       <?php
         getCartItems();
       ?>
-      
+
 
     </div>
   </div>

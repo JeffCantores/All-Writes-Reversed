@@ -1,5 +1,6 @@
 <?php
   session_start();
+  ob_start();
   require_once('services-comp/process-sign-up.php');
   //sign up function
   if(isset($_POST['fname']) && isset($_POST['mname']) && isset($_POST['lname']) && isset($_POST['suffix']) &&
@@ -8,4 +9,5 @@
     signup();
     header("Location: index.php");
   }
+  ob_end_flush();
 ?>

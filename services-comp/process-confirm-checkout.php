@@ -1,5 +1,5 @@
 <?php
-  define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']); // DEFINING THE DOCUMENTATION FOR LOG FILE - JEP (Huwag burahin)
+
 
   function fetchItems(){
     try {

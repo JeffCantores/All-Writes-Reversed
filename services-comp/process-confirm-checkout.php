@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -119,8 +120,6 @@
 
 function logConfirmCheckout(){
     $loginUsername = $_SESSION['username']; //fetch username code here
-    $prodName = $_POST['name'];
-    $prodPrice = $_POST['price'];
 
     echo "<br/>".DOCUMENT_ROOT;
 
@@ -128,9 +127,8 @@ function logConfirmCheckout(){
     $date = date('H:i, jS F Y');
     $outputString = $date."\t"
     .$_SERVER['REMOTE_ADDR']."\t"
-    .$loginUsername."\tbought (productName: "
-    .$prodName."\ttotal price: PHP "
-    .$prodPrice.")\n";
+    .$loginUsername."\tchecked out order (total price: PHP "
+    .$totalCart.")\n";
 
     $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

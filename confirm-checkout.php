@@ -33,7 +33,7 @@
 
     </div>
     <div class="card-footer d-flex justify-content-around">
-      <a class="btn btn-dark text-uppercase" href="checkout-form.php">Go Back</a>
+      <a class="btn btn-dark text-uppercase" href="checkout-form.php">Cancel</a>
       <a class="btn btn-dark text-uppercase" href="services-comp/process-checkout.php">Confirm</a>
     </div>
   </div>

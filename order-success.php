@@ -19,7 +19,7 @@
     </div>
     <div class="card-footer">
       <a href="index.php">
-        <button type="button" name="button">GO HOME</button>
+        <button type="button" name="button">HOME</button>
       </a>
     </div>
 

@@ -15,10 +15,6 @@
       require_once('services-comp/get-cart-items.php');
       require_once('functions/functions.php');
 
-
-      if ( isset($_GET['openmodal']) && $_GET['openmodal'] !== 'true' ){
-        showModal();
-      }
       if(isset($_SESSION['updated'])){
         echo '<div style="width:100%;">
                 <div class="alert alert-success" role="alert" style="width:50%; margin:auto; margin-top:2%;">

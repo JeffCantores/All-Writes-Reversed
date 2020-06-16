@@ -173,7 +173,7 @@
 					$result = $db->query($deleteCartItem);
 
 					saveRemovedCartItem($prodName, $prodQty, $prodPrice);
-					getRemovedCartItem();
+					//getRemovedCartItem();
 
 					$_SESSION['removed'] = 'Item Removed from Cart!';
 				}

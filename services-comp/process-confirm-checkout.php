@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -97,7 +98,9 @@
           $selectID = 'SELECT user_id FROM currentuser';
           $resultUserID = $db->query($selectID);
           $userID = $resultUserID->fetch_assoc();
+          $currentUserCnt = $resultUserID->num_rows;
 
+          if($currentUserCnt>0){
           $selectAddress = 'SELECT house_number, street, brgy, city FROM address WHERE user_id = '.$userID['user_id'];
           $resultAddress = $db->query($selectAddress);
           $userAddress = $resultAddress->fetch_assoc();
@@ -107,6 +110,7 @@
           echo '<h5>Barangay: &nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['brgy'].'"readonly><br>';
           echo '<h5>City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['city'].'"readonly><br>';
 
+          }
         }
     } catch (Exception $e) {
       echo $e-getMessage();
@@ -117,9 +121,6 @@
 
 function logConfirmCheckout(){
     $loginUsername = $_SESSION['username']; //fetch username code here
-    $prodName = $_POST['name'];
-    $prodPrice = $_POST['price'];
-    $prodQty = $_POST['qty'];
 
     echo "<br/>".DOCUMENT_ROOT;
 
@@ -127,10 +128,8 @@ function logConfirmCheckout(){
     $date = date('H:i, jS F Y');
     $outputString = $date."\t"
     .$_SERVER['REMOTE_ADDR']."\t"
-    .$loginUsername."\tbought (productName: "
-    .$prodName."\tqty: "
-    .$prodQty."\tprice: PHP "
-    .$prodPrice.")\n";
+    .$loginUsername."\tchecked out order (total price: PHP "
+    .$totalCart.")\n";
 
     $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

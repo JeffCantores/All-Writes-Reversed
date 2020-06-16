@@ -80,7 +80,7 @@
 
               </div>
 
-            <div class="form-group" style="display:inline-block; width:100%;">
+            <div class="form-group mt-3" style="display:inline-block; width:100%;">
               <a class="btn btn-light text-uppercase" href="index.php" style="margin-left:25%;">Cancel</a>
               <input class="btn btn-light text-uppercase" type="submit" value="Submit" style="margin-left:30%;">
             </div>

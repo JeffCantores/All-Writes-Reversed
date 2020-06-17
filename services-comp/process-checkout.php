@@ -13,17 +13,24 @@ try {
     if($dbError){
         throw new Exception("DB CONNECTION ERROR");
     }else{
-          $selectCurrentUserID = 'SELECT * FROM currentuser';
-          $cUserId = $db->query($selectCurrentUserID);
-          $result = $cUserId->fetch_assoc();
+      $selectCurrentUserID = 'SELECT * FROM currentuser';
+      $cUserId = $db->query($selectCurrentUserID);
+      $result = $cUserId->fetch_assoc();
 
-          $true = 1;
-          $updateUser = 'UPDATE cart SET checkedOut = '.$true.' WHERE user_id ='.$result['user_id'];
-          $userUpdate = $db->query($updateUser);
+      //bawas muna ng stock dito
+      //select qty product_id from cart where user_id = $result['user_id'] AND checkedOut = 0
+      //for loop (count nung nakuha sa cart)
+      //select stock from products where id = product_id
+      //newStock = stock - qty;
+      //update products set stock = newStock where id = product_id
 
-          logConfirmCheckout();
+      $true = 1;
+      $updateUser = 'UPDATE cart SET checkedOut = '.$true.' WHERE user_id ='.$result['user_id'];
+      $userUpdate = $db->query($updateUser);
 
-          header("Location: ../order-success.php");
+      logConfirmCheckout();
+
+      header("Location: ../order-success.php");
     }
     $db->close();
   }catch(Exception $e){

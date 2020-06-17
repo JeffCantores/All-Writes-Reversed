@@ -110,6 +110,14 @@ body{
 	margin-right: 10px;
 	color: white;
 }
+.search-button{
+	height: 38px;
+	width: 30px;
+	position: absolute;
+	top: 17.5%;
+	background-color: white;
+	border: none;
+}
 
 
 .item{

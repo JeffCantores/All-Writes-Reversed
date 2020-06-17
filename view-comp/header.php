@@ -40,6 +40,11 @@
           </li>&emsp;
           <input class="searchbar" type="text" name="" value="">
         </ul>
+          <form action="services-comp/process-search.php" method="GET"> <!--- papalitan yung form action--->
+            <button name="search" class="search-button" type="submit" value="search">
+              <center><i class="fas fa-search"></i></center>
+            </button>
+          </form>
       </div>
       <?php getUsernameAndButton();?>
     </div>

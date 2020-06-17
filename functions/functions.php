@@ -143,7 +143,7 @@
 
 						if($resultCnt >= 1){
 							$currentUsername = $result->fetch_assoc();
-							$_SESSION['username'] = $currentUsername['id'];
+							@ $_SESSION['username'] = $currentUsername['id'];
 						} else {
 							throw new Exception('ERROR GETTING USERNAME');
 						}
@@ -157,6 +157,6 @@
 
 	}
 
-	
+
 
 ?>

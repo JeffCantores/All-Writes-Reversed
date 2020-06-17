@@ -1,9 +1,9 @@
 10:32, 11th June 2020	JepCantores
 10:37, 11th June 2020	::1	JepCantores
 11:13, 11th June 2020	::1	JepCantores
-11:17, 11th June 2020	::1		
-      productName: AWR Script Tee V1	
-      qty: 1	
+11:17, 11th June 2020	::1
+      productName: AWR Script Tee V1
+      qty: 1
       price: PHP 450
 11:18, 11th June 2020	::1		productName: AWR Script Tee V1	qty: 1	price: PHP 450
 11:21, 11th June 2020	::1	productName: AWR Script Tee V1	qty: 1	price: PHP 450

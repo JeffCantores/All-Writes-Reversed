@@ -88,12 +88,12 @@
             throw new Exception("DB CONNECTION ERROR");
         }else{
           if($_SESSION['paymentMethod'] == 'cod'){
-            echo '<h3>Cash on Delivery</h3><hr class="style">';
+            echo '<h3 class="mt-2 mb-3">Cash on Delivery</h3><hr class="style">';
           } else {
-            echo '<h3>Credit Card</h3>';
-            echo $_SESSION['ccno'].'<br>';
-            echo $_SESSION['expdate'].'<br>';
-            echo $_SESSION['cvv'].'<br><hr class="style">';
+            echo '<h3 class="mt-2 mb-3">Credit Card</h3>';
+            echo '<h5>CC Number: <input class="uneditable" value="'.$_SESSION['ccno'].'" readonly></h5>';
+            echo '<h5>Expiry Date: <input class="uneditable" value="'.$_SESSION['expdate'].'"readonly></h5>';
+            echo '<h5>CVV: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$_SESSION['cvv'].'"readonly></h5><hr class="style">';
           }
 
           $selectID = 'SELECT user_id FROM currentuser';
@@ -102,14 +102,15 @@
           $currentUserCnt = $resultUserID->num_rows;
 
           if($currentUserCnt>0){
-            $selectAddress = 'SELECT house_number, street, brgy, city FROM address WHERE user_id = '.$userID['user_id'];
-            $resultAddress = $db->query($selectAddress);
-            $userAddress = $resultAddress->fetch_assoc();
+          $selectAddress = 'SELECT house_number, street, brgy, city FROM address WHERE user_id = '.$userID['user_id'];
+          $resultAddress = $db->query($selectAddress);
+          $userAddress = $resultAddress->fetch_assoc();
+          echo '<h3 class="mt-2 mb-3">Shipping Address</h3>';
+          echo '<h5>House no: &nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['house_number'].'"readonly><br>';
+          echo '<h5>Street: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['street'].'"readonly><br>';
+          echo '<h5>Barangay: &nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['brgy'].'"readonly><br>';
+          echo '<h5>City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['city'].'"readonly><br>';
 
-            echo $userAddress['house_number'].'<br>';
-            echo $userAddress['street'].'<br>';
-            echo $userAddress['brgy'].'<br>';
-            echo $userAddress['city'].'<br>';
           }
         }
     } catch (Exception $e) {

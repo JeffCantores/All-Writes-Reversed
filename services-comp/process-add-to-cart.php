@@ -38,8 +38,8 @@
                   throw new Exception("EXCEPTION INSERT");
                   //$_SESSION['addtocart'] = 'FALSE';
                 } else {
-                   $_SESSION['addtocart'] = 'Successfully added in your cart!';
-                  $db->commit();
+                  $_SESSION['addtocart'] = 'Successfully added in your cart!';
+
                   $stmt->close();
 
                   // log functions go here
@@ -53,6 +53,7 @@
           throw new Exception("EXCEPTION PRODID");
         }
       }
+      $db->close();
     } catch (Exception $e) {
       echo $e->getMessage();
     }

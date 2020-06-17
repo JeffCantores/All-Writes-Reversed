@@ -31,9 +31,10 @@
           default:
             break;
         }
-        header('Location: ../confirm-checkout.php');
       }
     }
+    $db->close();
+    header('Location: ../confirm-checkout.php');
   } catch (Exception $e) {
       $e->getMessage();
   }

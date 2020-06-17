@@ -48,6 +48,7 @@
           saveUpdateCartItem($itemName, $itemQty, $newPrice);
           //getUpdateCartItem();
 				}
+        $db->close();
 			} catch	(Exception $e){
 				echo $e->getMessage();
 			}

@@ -95,7 +95,7 @@
         <div class="modal-content" >
 
           <div class="modal-header">
-            <h4 class="modal-title">SIGN IN</h4>
+            <h4 class="modal-title">SIGN UP</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
@@ -119,13 +119,13 @@
                   <label class="labels" for="mname">Middle Name</label><br>
 
                   <input class="textbox" type="text" size="15" name="fname" id="fname" placeholder="First Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required>
-                  <input class="textbox" type="text" size="15" name="mname" id="mname" placeholder="Middle Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+                  <input class="textbox" type="text" size="15" name="mname" id="mname" placeholder="Middle Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." ><br>
 
                   <label class="labels" for="lname">Last Name</label>
                   <label class="labels" for="suffix">Suffix</label><br>
 
-                  <input class="textbox" type="text" size="15" name="lname" id="lname" placeholder="Last Name" pattern="^[^\s]+(\s+[^\s]+)*$" title= required>
-                  <input class="textbox" type="text" size="15" name="suffix" id="suffix" placeholder="Suffix" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required><br>
+                  <input class="textbox" type="text" size="15" name="lname" id="lname" placeholder="Last Name" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space." required>
+                  <input class="textbox" type="text" size="15" name="suffix" id="suffix" placeholder="Suffix" pattern="^[^\s]+(\s+[^\s]+)*$" title="Must not start or end with a space."><br>
                 </div>
 
                 <label class="labels" for="uname">Username</label><br>

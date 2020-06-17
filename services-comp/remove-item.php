@@ -1,7 +1,7 @@
 <?php
   session_start();
   ob_start();
-  require_once('../functions/functions.php');
+  require_once('process-delete-cart-item.php');
   if(isset($_POST['name'])){
 
     $prodPrice = $_POST['price'];

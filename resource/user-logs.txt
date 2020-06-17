@@ -172,3 +172,4 @@
 09:55, 17th June 2020	::1	Testusername	updated order (productName: AWR Logo Tee V1	qty: 6	price: PHP 2100)
 09:55, 17th June 2020	::1	Testusername	updated order (productName: AWR Logo Tee V1	qty: 4	price: PHP 1400)
 09:55, 17th June 2020	::1	Testusername	updated order (productName: AWR Logo Tee V1	qty: 1	price: PHP 350)
+10:13, 17th June 2020	::1	Testusername was logged out

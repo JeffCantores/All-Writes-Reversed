@@ -42,6 +42,7 @@
               $_SESSION['login-error'] = "Username doesn't exist.";
           }
         }
+        $db->close();
     } catch (Exception $e) {
       $e->getMessage();
     }

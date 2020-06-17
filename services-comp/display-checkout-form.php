@@ -27,6 +27,7 @@ function autoFillAddressInfo(){
             </div> ';
 
       }
+      $db->close();
     } catch (Exception $e) {
           $e->getMessage();
       }

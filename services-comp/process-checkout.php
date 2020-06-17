@@ -25,7 +25,7 @@ try {
 
           header("Location: ../order-success.php");
     }
-
+    $db->close();
   }catch(Exception $e){
     echo $e->getMessage();
   }

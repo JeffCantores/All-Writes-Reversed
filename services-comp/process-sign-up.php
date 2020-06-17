@@ -84,9 +84,11 @@
               throw new Exception("insert error");
             }
           }
-
-
         }
+        $stmt->close();
+        $stmnt->close();
+        $sttmnt->close();
+        $db->close();
     } catch (Exception $e) {
         $e->getMessage();
     }

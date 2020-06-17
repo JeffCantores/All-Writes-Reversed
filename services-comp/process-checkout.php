@@ -17,12 +17,25 @@ try {
       $cUserId = $db->query($selectCurrentUserID);
       $result = $cUserId->fetch_assoc();
 
-      //bawas muna ng stock dito
-      //select qty product_id from cart where user_id = $result['user_id'] AND checkedOut = 0
-      //for loop (count nung nakuha sa cart)
-      //select stock from products where id = product_id
-      //newStock = stock - qty;
-      //update products set stock = newStock where id = product_id
+      $selectCartItems = 'SELECT qty, product_id FROM cart where user_id = '.$result['user_id'].' AND checkedOut = 0';
+      $cartItems = $db->query($selectCartItems);
+      $cartCnt = $cartItems->num_rows;
+
+      for ($count=0; $count < $cartCnt; $count++) {
+        $resultItems = $cartItems->fetch_assoc();
+
+        $updateItemStock = 'SELECT stock FROM products WHERE id = '.$resultItems['product_id'].'';
+        $resultStock = $db->query($updateItemStock);
+        $itemStock = $resultStock->fetch_assoc();
+
+        $stockTaken = $resultItems['qty'];
+        $stocks = $itemStock['stock'];
+
+        $newStock = $stocks - $stockTaken;
+
+        $updatedStocks = 'UPDATE products SET stock = "'.$newStock.'" WHERE id = '.$resultItems['product_id'].'';
+        $newStocksUpdate =  $db->query($updatedStocks);
+      }
 
       $true = 1;
       $updateUser = 'UPDATE cart SET checkedOut = '.$true.' WHERE user_id ='.$result['user_id'];

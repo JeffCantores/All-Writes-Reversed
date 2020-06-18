@@ -15,15 +15,18 @@ function getSearchProduct($searchWord){
         WHERE name LIKE ?';
       $stmt = $db->prepare($selectQuery);
       $searchWord = '%'.$searchWord.'%';
-      echo $searchWord;
       $stmt->bind_param('s',$searchWord);
       $stmt->execute();
+      $stmt->store_result();
+
+      $stmt->bind_result($img_dir, $name, $prodPrice);
+
       $count = $stmt->num_rows;
 
       for($ite = 0; $ite < $count; $ite++){
-        $item = $stmt->fetch_assoc();
+        $item = $stmt->fetch();
 
-        echo $item['img_dir'].'<br>';
+        echo $img_dir.'<br>';
 
         //similar sa pag set ng items from getProductImages()
         //get name, replace space with - , change to lower case

@@ -1,4 +1,10 @@
 <?php
+  require_once('../exception/file-not-found-exception.php');
+?>
+
+<?php
+  define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
+
   function removeCartItem($prodName, $prodPrice, $prodQty){
     try {
       @ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');

@@ -111,14 +111,14 @@ body{
 	color: white;
 }
 .search-button{
-	height: 38px;
+	height: 28px;
 	width: 30px;
 	position: absolute;
-	top: 17.5%;
+	top: 27%;
 	background-color: white;
 	border: none;
+	border:none;
 }
-
 
 .item{
 	height: 40%;

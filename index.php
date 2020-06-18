@@ -6,13 +6,20 @@
   session_start();
   require_once('view-comp/header.php');
   require_once('functions/functions.php');
+  require_once('services-comp/process-search.php');
 
   if(!isset($_SESSION['username'])){
     getUser();
   }
 ?>
     <div class="content">
-    	<?php  getProductImages(); ?>
+    	<?php
+        if(isset($_GET['search'])){
+          getSearchProduct($_GET['search']);
+        } else {
+          getProductImages();
+        }
+      ?>
     </div>
 
 <?php

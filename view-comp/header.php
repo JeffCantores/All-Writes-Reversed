@@ -38,13 +38,11 @@
           <li class="nav-item <?php if(isActive('view-cart.php')) echo 'active'; ?>" >
             <a class="nav-link" href="view-cart.php"><i class="fas fa-shopping-cart"></i><strong> CART</strong></a>
           </li>&emsp;
-          <input class="searchbar" type="text" name="" value="">
         </ul>
-          <form action="services-comp/process-search.php" method="GET"> <!--- papalitan yung form action--->
-            <button name="search" class="search-button" type="submit" value="search">
-              <center><i class="fas fa-search"></i></center>
-            </button>
-          </form>
+        <form action="index.php" method="GET">
+          <input class="searchbar" type="text" placeholder="Search.." name="search" style="margin-top:8%;">
+          <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+        </form>
       </div>
       <?php getUsernameAndButton();?>
     </div>

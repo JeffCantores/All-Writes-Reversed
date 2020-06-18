@@ -129,8 +129,7 @@ function logConfirmCheckout(){
     $date = date('H:i, jS F Y');
     $outputString = $date."\t"
     .$_SERVER['REMOTE_ADDR']."\t"
-    .$loginUsername."\tchecked out order (total price: PHP "
-    .$totalCart.")\n";
+    .$loginUsername."\tchecked out order\n";
 
     $file = @ fopen(DOCUMENT_ROOT.'/WEBPROG-FINALS/resource/user-logs.txt', 'ab'); //writing
 

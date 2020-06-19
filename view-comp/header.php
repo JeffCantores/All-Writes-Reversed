@@ -139,7 +139,7 @@
                   title="Must not start with space and must contain atleast 1 Uppercase, 1 Lowercase, and 1 Numeric Character."required><br>
                 <label class="labels" for="email">Email</label><br>
                 <input class="textbox" type="text" size="39" name="email" id="email" placeholder="Email"
-                pattern="^[\w._%+-]+@[\w.-]+\.[a-z]{2,3}$" title="Invalid Email Format" required><br>
+                pattern="^[\w.]+@[\w.-]+\.[a-z]{2,3}$" title="Invalid Email Format" required><br>
 
                 <div class="containers">
                   <label class="labels" for="houseno">House No.</label>

@@ -27,12 +27,12 @@ function getSearchProduct($searchWord){
         for($ite = 0; $ite < $count; $ite++){
           $item = $stmt->fetch();
           $productName = strtolower(str_replace(' ', '-', $name));
-          $productName = str_replace('AWR ', '', $name);
+          $prodName = str_replace('AWR ', '', $name);
           echo '<div class="row display-item">';
           echo '<a href="'.$productName.'.php"> ';
           echo '<img class="item" src = "'.$img_dir.'">';
           echo '</a><br>';
-          echo '<center><h6 style="color:white;">'.$productName.'</h6></center>';
+          echo '<center><h6 style="color:white;">'.$prodName.'</h6></center>';
           echo '<center><h6 style="color:white;">PhP '.$prodPrice.'.00 </h6></center>';
           echo '</div>';
         }

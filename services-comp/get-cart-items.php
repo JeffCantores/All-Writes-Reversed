@@ -69,7 +69,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="process-cart.php">
+                <a href="services-comp/process-cart.php">
                   <button class="btn btn-secondary" >CHECK OUT</button>
                 </a>
               </div>';

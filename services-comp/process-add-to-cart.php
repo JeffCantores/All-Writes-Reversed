@@ -21,7 +21,8 @@
             $userID = $resultUserID->fetch_assoc();
             if($userID){
              $selectProdID;
-             $cart_item = 'SELECT * from cart WHERE product_id = '.$prodID['prodID'].'AND checkedOut = 0';
+             $cart_item = 'SELECT * from cart WHERE product_id = '.$prodID['prodID'].' AND checkedOut = 0';
+             echo $cart_item;
              $resultCartItems = $db->query($cart_item);
              $count = $resultCartItems->num_rows;
              if ($count>0) {

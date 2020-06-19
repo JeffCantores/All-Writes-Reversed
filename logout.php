@@ -5,6 +5,9 @@
 <?php
   session_start();
   ob_start();
+  if(isset($_SESSION['checkoutprocess'])){
+    unset($_SESSION['checkoutprocess']);
+  }
   define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 
   try {

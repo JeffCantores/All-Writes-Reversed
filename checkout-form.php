@@ -57,7 +57,7 @@
                   <div class="row d-flex justify-content-center">
                     <label class="p-2 ml-auto col-4 text-right float-left" for="exp">Expiry Date</label>
                     <input type="text" class="form-control col-4 float-left mr-auto"
-                    id="expdate" name="expdate" pattern="^((0[1-9])|(1[0-2]))[\/\.\-]*((0[0-9])|(1[1-9]))$" placeholder="MM/YY">
+                    id="expdate" name="expdate" pattern="^((0[1-9])|(1[0-2]))-?([0-9][0-9])$" placeholder="MM-YY">
                   </div>
 
                   <div class="row d-flex justify-content-center">

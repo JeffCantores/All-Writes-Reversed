@@ -1,5 +1,8 @@
 <?php
       session_start();
+      if(isset($_SESSION['checkoutprocess'])){
+        unset($_SESSION['checkoutprocess']);
+      }
       if(@ $_SERVER['HTTPS'] != 'on'){
         header('Location: https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
         exit;

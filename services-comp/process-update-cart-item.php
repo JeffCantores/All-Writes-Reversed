@@ -62,7 +62,7 @@
         $date = date('H:i, jS F Y');
         $outputString = $date."\t"
         .$_SERVER['REMOTE_ADDR']."\t"
-        .$loginUsername."\tupdated order (productName: "
+        .$loginUsername."\tupdated order (Product Name: "
         .$itemName."\tqty: "
         .$itemQty."\tprice: PHP "
         .$newPrice.")\n";

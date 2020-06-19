@@ -100,8 +100,8 @@
   	('https://i.imgur.com/zOWRgYW.jpg', 'AWR Script Tee V1', 1, 2, 2, 9),
   	('https://i.imgur.com/8gpI2DX.jpg', 'AWR Script Tee V2', 2, 2, 2, 4),
   	('https://i.imgur.com/6wvoKFK.jpg', 'AWR Script Tee V3', 3, 2, 2, 6),
-  	('https://i.imgur.com/2LT7Wcp.jpg', 'AWR In Memory of I Dont Remember V1', 1, 3, 3, 5),
-  	('https://i.imgur.com/Sjid8ws.jpg', 'AWR In Memory of I Dont Remember V2', 1, 3, 3, 7),
+  	('https://i.imgur.com/a7hSIdX.jpg', 'AWR Tebigots', 3, 3, 3, 5),
+  	('https://i.imgur.com/J6TPMFx.jpg', 'AWR Tsikot', 3, 3, 3, 7),
   	('https://i.imgur.com/5BllqK7.jpg', 'AWR Too Busy Doing Nothing', 1, 3, 3, 8),
   	('https://i.imgur.com/Edg5djr.jpg', 'AWR Brainless Genius', 4, 3, 3, 6),
   	('https://i.imgur.com/YFoZBRJ.jpg', 'AWR Toxic Talksick', 3, 3, 3, 8);

@@ -69,7 +69,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="checkout-form.php">
+                <a href="process-cart.php">
                   <button class="btn btn-secondary" >CHECK OUT</button>
                 </a>
               </div>';
@@ -77,9 +77,7 @@
               echo
               '<div class="cart-body"></div>
               <div class="card-footer">
-                <a href="checkout-form.php">
-                  <button class="btn btn-secondary" disabled>CHECK OUT</button>
-                </a>
+                <button class="btn btn-secondary" disabled>CHECK OUT</button>
               </div>';
             }
           }

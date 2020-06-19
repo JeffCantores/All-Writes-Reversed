@@ -106,10 +106,10 @@
           $resultAddress = $db->query($selectAddress);
           $userAddress = $resultAddress->fetch_assoc();
           echo '<h3 class="mt-2 mb-3">Shipping Address</h3>';
-          echo '<h5>House no: &nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['house_number'].'"readonly><br>';
-          echo '<h5>Street: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['street'].'"readonly><br>';
-          echo '<h5>Barangay: &nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['brgy'].'"readonly><br>';
-          echo '<h5>City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['city'].'"readonly><br>';
+          echo '<h5>House no: <input class="uneditable" value="'.$userAddress['house_number'].'"readonly></h5>';
+          echo '<h5>Street: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['street'].'"readonly></h5>';
+          echo '<h5>Barangay:&nbsp<input class="uneditable" value="'.$userAddress['brgy'].'"readonly></h5>';
+          echo '<h5>City: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="uneditable" value="'.$userAddress['city'].'"readonly></h5>';
 
           }
         }

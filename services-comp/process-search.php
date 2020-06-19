@@ -6,7 +6,7 @@ function getSearchProduct($searchWord){
     if($dbError){
         throw new Exception("DB CONNECTION ERROR");
     }else{
-      echo '<h6> You searched : '.$searchWord.'</h6>';
+      echo '<br><h5 class="category"> You searched for: '.$searchWord.'</h5>';
 
       $selectQuery =
       'SELECT img_dir, name, prices.price as prodPrice from products
@@ -23,15 +23,25 @@ function getSearchProduct($searchWord){
 
       $count = $stmt->num_rows;
 
-      for($ite = 0; $ite < $count; $ite++){
-        $item = $stmt->fetch();
-
-        echo $img_dir.'<br>';
-
-        //similar sa pag set ng items from getProductImages()
-        //get name, replace space with - , change to lower case
-        //see functions.php - line 108 for implementation of display
+      if($count>0){
+        for($ite = 0; $ite < $count; $ite++){
+          $item = $stmt->fetch();
+          $productName = strtolower(str_replace(' ', '-', $name));
+          $productName = str_replace('AWR ', '', $name);
+          echo '<div class="row display-item">';
+          echo '<a href="'.$productName.'.php"> ';
+          echo '<img class="item" src = "'.$img_dir.'">';
+          echo '</a><br>';
+          echo '<center><h6 style="color:white;">'.$productName.'</h6></center>';
+          echo '<center><h6 style="color:white;">PhP '.$prodPrice.'.00 </h6></center>';
+          echo '</div>';
+        }
+      } else {
+        echo '<br><h5 class="category">Sorry we couldn\'t find what you\'re looking for.</h5>';
+        echo '<h5 class="category">Try using a different keyword.</h5>';
       }
+
+
     }
   } catch (Exception $e){
     echo $e->getMessage();

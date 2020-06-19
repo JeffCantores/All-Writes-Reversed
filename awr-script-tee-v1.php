@@ -8,9 +8,7 @@
 			require_once('services-comp/retrieve-item.php')
 ?>
 	<div class="component">
-		<div class="view-item">
-			<?php getItemDetails("AWR Script Tee V1"); ?>
-		</div>
+		<?php getItemDetails("AWR Script Tee V1"); ?>
 	</div>
 
 <?php

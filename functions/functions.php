@@ -107,18 +107,21 @@
 
 						for($ctr2 = 0; $ctr2 < $resultProductsCount; $ctr2++){
 							$product  =$resultProducts->fetch_assoc();
-							$productName = strtolower(str_replace(' ', '-', $product['name']));
+							$productNameLink = strtolower(str_replace(' ', '-', $product['name']));
+							$productName = str_replace('AWR ', '', $product['name']);
 
 							//echo $productName.'.php';
 							echo '<div class="row display-item">';
-							echo '<a href="'.$productName.'.php"> ';
+							echo '<a href="'.$productNameLink.'.php"> ';
 							echo '<img class="item" src = "'.$product['img_dir'].'">';
 							echo '</a><br>';
-							echo '<center><h6 style="color:white;">PhP '.$product['prodPrice'].'.00 </h6></center>';
+							echo '<center><h6 style="color:white; margin-top:10px; margin-bottom:0px;">PhP '.$product['prodPrice'].'.00 </h6></center>';
+							echo '<center><h6 style="color:white; word-wrap: break-word; margin-top:0px;">'.$productName.'</h6></center>';
 							echo '</div>';
 						}
 	   			}
 	   		}
+
 				$db->close();
 		} catch (Exception $e){
 			echo $e->getMessage();
@@ -157,6 +160,40 @@
 
 	}
 
-	
+	function getName(){
+		try {
+			@ $db = new mysqli('127.0.0.1:3306','krimhajefcee', 'incorrect', 'awr_database');
+				$dbError = mysqli_connect_errno();
+				if($dbError){
+						throw new Exception("DB CONNECTION ERROR");
+				}else{
+					$selectName = 'SELECT * FROM currentuser';
+					$resultName= $db->query($selectName);
+					$resultNameCount = $resultName->num_rows;
+					if($resultNameCount >=1){
+						$resultNameID = $resultName->fetch_assoc();
+						$selectFullName = 'SELECT firstname, middlename, lastname, suffix FROM users where users.id = "'.$resultNameID['id'].'"';
+						$result = $db->query($selectFullName);
+						$resultCnt = $result->num_rows;
+
+						if($resultCnt >= 1){
+							$currentUsername = $result->fetch_assoc();
+							echo $currentUsername['firstname'].' '.$currentUsername['middlename']
+								.' '.$currentUsername['lastname'].' '.$currentUsername['suffix'].'!';
+
+						} else {
+							throw new Exception('ERROR GETTING USERNAME');
+						}
+
+					}
+				}
+				$db->close();
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+
+	}
+
+
 
 ?>

@@ -121,7 +121,8 @@ body{
 }
 
 .item{
-	height: 40%;
+	height: 80%;
+	width: 100%;
 	border-radius: 10px;
 }
 .display-item{
@@ -131,9 +132,12 @@ body{
 	padding: 15px;
 	background-color: black;
 	border-radius: 20px;
+	width: 16%;
+	height: 60%;
 }
 
 .category{
 	margin-left:20px;
+	margin-top: 0px;
 	color: white;
 }

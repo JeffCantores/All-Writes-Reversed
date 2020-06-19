@@ -42,7 +42,7 @@ try {
       $userUpdate = $db->query($updateUser);
 
       logConfirmCheckout();
-
+      unset($_SESSION['checkoutprocess']);
       header("Location: ../order-success.php");
     }
     $db->close();

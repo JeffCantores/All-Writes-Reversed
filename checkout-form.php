@@ -49,21 +49,21 @@
                   <p class="p-2 col-9 text-right">Credit Card Details</p>
 
                   <div class="row d-flex justify-content-center">
-                    <label class="p-2 ml-auto col-4 text-right float-left" for="cardNo">Credit Number</label>
+                    <label class="p-2 ml-auto col-4 text-right float-left" for="cardNo">Credit Card Number</label>
                     <input type="text" class="form-control col-4 float-left mr-auto"
-                    id="cardNo" name="cardNo" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" placeholder="xxxx-xxxx-xxxx-xxxx">
+                    id="cardNo" name="cardNo" pattern="\d{4}-?\d{4}-?\d{4}-?\d{4}" title="Invalid Credit Card Number" placeholder="xxxx-xxxx-xxxx-xxxx">
                   </div>
 
                   <div class="row d-flex justify-content-center">
                     <label class="p-2 ml-auto col-4 text-right float-left" for="exp">Expiry Date</label>
                     <input type="text" class="form-control col-4 float-left mr-auto"
-                    id="expdate" name="expdate" pattern="^((0[1-9])|(1[0-2]))-?([0-9][0-9])$" placeholder="MM-YY">
+                    id="expdate" name="expdate" title="Invalid Expiry Date" pattern="^((0[1-9])|(1[0-2]))-?([0-9][0-9])$" placeholder="MM-YY">
                   </div>
 
                   <div class="row d-flex justify-content-center">
                     <label class="p-2 ml-auto col-4 text-right float-left" for="cvv">CVV</label>
                     <input pattern="\d{3}" type="text" class="form-control col-4 float-left mr-auto"
-                    id="cvv" name="cvv" placeholder="Card Verification Value">
+                    id="cvv" name="cvv" title="Invalid CVV" placeholder="Card Verification Value">
                   </div>
 
                 </div>

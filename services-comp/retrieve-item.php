@@ -63,7 +63,8 @@
 								<h7>Quantity</h7>
 								<input onchange="computePrice()" id="qty" class="uneditable" name="qty" type="number" value="1" min=1 max='.$dir['stock'].' style="width:100%;"><br>
 								<h7>Price</h7>
-								<input id="price" class="uneditable" name="price" size="49" type="text" value="'.$itemPrice.'" readonly><br><br>';
+								<input id="price" class="uneditable" name="price" size="49" type="text" value="'.$itemPrice.'" readonly><br>
+								<h8>Stock: '.$dir['stock'].'</h8>';
 
 								echo '<div class="form-group">';
 									if(!isset($_SESSION['username']) || $dir['stock'] <= 0)	{

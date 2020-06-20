@@ -15,6 +15,7 @@
       <script src="https://kit.fontawesome.com/e4cf9541ab.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/view_cart.css">
+    <link rel="icon" href="images/AWRLogoNoBorder.ico" type="image/ico">
     <script type="text/javascript" src="js/view-cart.js"></script>
     <script type="text/javascript" src="js/checkout-form.js"></script>
     <script type="text/javascript" src="js/view-item-price.js"></script>

@@ -22,7 +22,7 @@
                 $cartProducts = $resultCartProducts->fetch_assoc();
 
                 $selectProducts =
-                'SELECT img_dir, name, colors.color, prices.price
+                'SELECT img_dir, name, colors.color, prices.price, stock
                   FROM products
                     INNER JOIN colors
       								ON colors.id = products.color_id
@@ -52,7 +52,7 @@
                 <div class="details">
                     <input class="uneditable" name="name" size="20" type="text" value="'.$products['name'].'" readonly><br>
                     <input class="uneditable" name="color" size="20" type="text" value="'.$products['color'].'" readonly><br>
-                    <input class="qty uneditable" name="qty" size="29" type="number" value="'.$cartProducts['qty'].'" min=1 >
+                    <input class="qty uneditable" name="qty" type="number" value="'.$cartProducts['qty'].'" min=1 max='.$products['stock'].' style="width:100%;">
                     <br>
                     <input class="price uneditable" name="price" size="20" type="text" value="'.$cartProducts['cartPrice'].'" readonly><br>
                     <button class="btn btn-dark btn-sm" formaction="services-comp/update-item.php">UPDATE</button>

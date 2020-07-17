@@ -12,4 +12,6 @@
     $productName = strtolower(str_replace(' ', '-', $prodName));
     header("Location: ".$productName.".php");
   }
+
+  
 ?>
